@@ -101,7 +101,7 @@ function hoistingTest()
 
 ### Function hoisting:
 
-In case of functions, hoisting is applied to function declaration, but not to function expressions
+In case of functions, hoisting is applied to function declarations, but not to function expressions
 
 #### Example 1.3:
 
@@ -139,13 +139,13 @@ add();
 add();
 ```
 
+---
 
-#### Aside hint:
-In javascript when we use a variable we are using a reference to that variables.
+### Variable assignments by reference:
+In javascript when we use a variable assignment we are using a reference to that variables.
 
-In the example below console.log(y) will print 2 not 1 because this assignment operation y = x means that i need to keep a reference to x saved by y,
-
-so whenever x is changed y will also return the changed number because it is saving a reference to a value.
+In the example below `console.log(y)` will print 2 not 1 because this assignment operation `y = x` means that `y` is keeping a reference to `x` 
+So whenever `x` is changed `y` will also return the changed value.
 
 #### Example 1.5:
 ```javascript
@@ -153,7 +153,7 @@ var x = 1;
 var y = x;
 
 x+=1;
-console.log(y);
+console.log(y); // 2
 ```
 
 ---
