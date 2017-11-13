@@ -1,4 +1,4 @@
-# Scope, Closures, and Hoisting
+# Scope, Hoisting , and Closure
 
 ### What is a scope ?
 A scope is where a variable can be accessed inside your code.
@@ -6,16 +6,16 @@ A scope is where a variable can be accessed inside your code.
 ---
 
 ### Why Scope matters ?
-The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables, resulting in code with less errors
+The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables, resulting in code with less errors.
 
 ---
 
 ### Javascript Scopes:
-**1.Global Scope:** Any variable defined outside all the functions and objects in our code, usually can be accessed under `window` object in all browsers.
+**1.Global Scope:** Variables not contained by any function, defined directly under `window` object, and can be accessed everywhere inside your code.
 
-**2.Local Scope:** Any variables defined inside a function is accessible inside that function only.
+**2.Local Scope:** Variables defined inside a function and accessible inside that function only.
 
-**3.Lexical Scope (nested scopes):** Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
+**3.Lexical Scope (nested scopes):** Variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
 
 ---
 
@@ -23,7 +23,7 @@ The existance of scope is important to keep a maintanable less colliding code, t
 In javascript variables can be scoped using functions.
 
 #### Example 1.0:
-Hint: we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
+**Hint:** we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
 
 ```javascript
 var globalName = "amr";
@@ -43,12 +43,13 @@ console.log(globalMessage);    //hello -> global variable because its defined wi
 console.log(localName);        //undefined  -> local variable because its scoped by scopeFunction function
 ```
 
+---
 
 ### No Block Scope!: (if, for, while, switch):
-Any variable defined inside a block statement will take the parent scope, usually global scope if defined in global context
+Variables defined inside a block statement will take the parent scope.
 
 #### ES6 `let` keyword: 
-In ES6 you can use `let` keyword instead of `var` inside block statement to scope the vairable.
+In ES6 you can use `let` keyword instead of `var` inside block statement to create local scope variable to that block statement.
 
 #### Example 1.1:
 ```javascript
@@ -73,6 +74,31 @@ console.log(globalHoistedNum); //10 -> global hoisted variable
 var globalHoistedNum = 10;
 ```
 
+#### Example 1.3:
+Note in the example below that the value printed inside the function is `undefined` not `10`, this is because variable declaration is hoisted not initialization.
+
+```javascript
+function hoistingTest()
+{
+    console.log(x);
+
+    var x = 10;
+}
+```
+
+The code above is equivalent to 
+
+```javascript
+function hoistingTest()
+{
+    var x;
+
+    console.log(x);
+
+    x = 10;
+}
+```
+
 ---
 
 ### Scope Chain: 
@@ -83,7 +109,7 @@ It’s always the position in the code that defines the scope. When resolving a 
 ### Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables.
 
-#### Example 1.3:
+#### Example 1.4:
 ```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
@@ -107,7 +133,7 @@ In the example below console.log(y) will print 2 not 1 because this assignment o
 
 so whenever x is changed y will also return the changed number because it is saving a reference to a value.
 
-#### Example 1.4:
+#### Example 1.5:
 ```javascript
 var x = 1;
 var y = x;
@@ -123,7 +149,7 @@ console.log(y);
 we can use closure to help us capture a variable value in specific time before it get changed,
 //as we leared in the previous section that we save a reference to the variable.
 
-#### Example 1.5:
+#### Example 1.6:
 ```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
@@ -142,7 +168,7 @@ printValuesArr[9]();
 
 as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-#### Example 1.6:
+#### Example 1.7:
 Capture the value of `i` inside each loop using closure
 
 ```javascript
