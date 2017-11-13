@@ -160,8 +160,9 @@ add();
 
 ### Capture variable values using closure: 
 
-we can use closure to help us capture a variable value in specific time before it get changed,
-//as we leared in the previous section that we save a reference to the variable.
+we can use closure to help us capture a variable value in specific time before it get changed.
+
+As we already learned that we save a reference to the variable.
 
 #### Example 1.6:
 ```javascript
@@ -180,7 +181,7 @@ printValuesArr[5](); //10
 printValuesArr[9](); //10
 ```
 
-as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
+as we can see the example 1.6 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
 #### Example 1.7:
 Capture the value of `i` inside each loop using closure
