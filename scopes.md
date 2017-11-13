@@ -1,27 +1,28 @@
 # Scope, Closures, and Hoisting
 
-## What is a scope ?
+### What is a scope ?
 A scope is where a variable can be accessed inside your code.
 
+---
 
-
-## Why Scope matters ?
+### Why Scope matters ?
 The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables, resulting in code with less errors
 
+---
 
-
-## Javascript Scopes:
+### Javascript Scopes:
 **1.Global Scope:** Any variable defined outside all the functions and objects in our code, usually can be accessed under `window` object in all browsers.
 
 **2.Local Scope:** Any variables defined inside a function is accessible inside that function only.
 
 **3.Lexical Scope (nested scopes):** Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
 
+---
 
-## Function scope:
+### Function scope:
 In javascript variables can be scoped using functions.
 
-### Example 1.0:
+#### Example 1.0:
 Hint: we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
 
 ```javascript
@@ -49,7 +50,7 @@ Any variable defined inside a block statement will take the parent scope, usuall
 ### ES6 `let` keyword: 
 In ES6 you can use `let` keyword instead of `var` inside block statement to scope the vairable.
 
-### Example 1.1:
+#### Example 1.1:
 ```javascript
 if (true) { 
     var globalJob = "Software Engineer"; //block statement does not create new scope for variables
@@ -59,11 +60,12 @@ console.log(globalJob);  //Software Engineer -> global variable because its defi
 console.log(localTitle); //undefined ->  local variable defined with let inside block statement
 ```
 
+---
 
-## Variable hoisting: 
+### Variable hoisting: 
 Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
-### Example 1.2: 
+#### Example 1.2: 
 Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
 
 ```javascript
@@ -71,15 +73,17 @@ console.log(globalHoistedNum); //10 -> global hoisted variable
 var globalHoistedNum = 10;
 ```
 
+---
 
-## Scope Chain: 
+### Scope Chain: 
 It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
 
+---
 
-## Closure: 
+### Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables.
 
-### Example 1.3:
+#### Example 1.3:
 ```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
@@ -96,14 +100,14 @@ add();
 ```
 
 
-### Aside hint:
+#### Aside hint:
 In javascript when we use a variable we are using a reference to that variables.
 
-In the example below: console.log(y) will print 2 not 1 because this assignment operation y = x means that i need to keep a reference to x saved by y,
+In the example below console.log(y) will print 2 not 1 because this assignment operation y = x means that i need to keep a reference to x saved by y,
 
 so whenever x is changed y will also return the changed number because it is saving a reference to a value.
 
-### Example 1.4:
+#### Example 1.4:
 ```javascript
 var x = 1;
 var y = x;
@@ -112,13 +116,14 @@ x+=1;
 console.log(y);
 ```
 
+---
 
-## Capture variable values using closure: 
+### Capture variable values using closure: 
 
 we can use closure to help us capture a variable value in specific time before it get changed,
 //as we leared in the previous section that we save a reference to the variable.
 
-### Example 1.5:
+#### Example 1.5:
 ```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
@@ -137,8 +142,8 @@ printValuesArr[9]();
 
 as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-### Example 1.6:
-Capture the value of i inside each loop using closure
+#### Example 1.6:
+Capture the value of `i` inside each loop using closure
 
 ```javascript
 var printValuesArr = [];
