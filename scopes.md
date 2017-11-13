@@ -29,6 +29,7 @@ The existance of scope is important to keep a maintanable less colliding code, t
 //Lets check the example below:
 //we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
 
+```javascript
 var globalName = "amr";
 
 function scopeFunction() {
@@ -45,6 +46,7 @@ scopeFunction();
 console.log(globalName);       //amr  ->  global variable, defined in the global scope
 console.log(globalMessage);    //hello -> global variable because its defined without using var keyword
 console.log(localName);        //undefined  -> local variable because its scoped by scopeFunction function
+```
 
 
 
