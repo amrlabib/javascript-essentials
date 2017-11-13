@@ -44,10 +44,10 @@ console.log(localName);        //undefined  -> local variable because its scoped
 ```
 
 
-## No Block Scope!: (if, for, while, switch):
+### No Block Scope!: (if, for, while, switch):
 Any variable defined inside a block statement will take the parent scope, usually global scope if defined in global context
 
-### ES6 `let` keyword: 
+#### ES6 `let` keyword: 
 In ES6 you can use `let` keyword instead of `var` inside block statement to scope the vairable.
 
 #### Example 1.1:
