@@ -120,6 +120,23 @@ var expressionFunc = function(){
 
 ---
 
+### Variable assignments by reference:
+In javascript when we use a variable assignment we are using a reference to that variables.
+
+In the example below `console.log(y)` will print 2 not 1 because this assignment operation `y = x` means that `y` is keeping a reference to `x` 
+So whenever `x` is changed `y` will also return the changed value.
+
+#### Example 1.5:
+```javascript
+var x = 1;
+var y = x;
+
+x+=1;
+console.log(y); // 2
+```
+
+---
+
 ### Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables.
 
@@ -137,23 +154,6 @@ var add = testClosure();
 add();
 add();
 add();
-```
-
----
-
-### Variable assignments by reference:
-In javascript when we use a variable assignment we are using a reference to that variables.
-
-In the example below `console.log(y)` will print 2 not 1 because this assignment operation `y = x` means that `y` is keeping a reference to `x` 
-So whenever `x` is changed `y` will also return the changed value.
-
-#### Example 1.5:
-```javascript
-var x = 1;
-var y = x;
-
-x+=1;
-console.log(y); // 2
 ```
 
 ---
