@@ -18,14 +18,11 @@ The existance of scope is important to keep a maintanable less colliding code, t
 **3.Lexical Scope (nested scopes):** Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
 
 
+## Function scope:
+In javascript variables can be scoped using functions.
 
-
-
-//Function scope:
-//In javascript variables can be scoped by functions.
-
-//Lets check the example below:
-//we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
+### Example 1.0:
+Hint: we will start every variable name with its scope type example: globalVarName , localVarName, lexicalVarName
 
 ```javascript
 var globalName = "amr";
@@ -47,31 +44,43 @@ console.log(localName);        //undefined  -> local variable because its scoped
 ```
 
 
+## No Block Scope!: (if, for, while, switch):
+Any variable defined inside a block statement will take the parent scope, usually global scope if defined in global context
 
+## ES6 `let` keyword: 
+In ES6 you can use let inside block statement to scope the vairable.
 
-// No Block scope (if, for, while, switch, ...): any variable defined inside a block statement will take the parent scope, usually global scope if defined in global context
-// ES6: in ES6 you can use let inside block statement to scope the vairable.
-
-//Example:
-if (true) {
+### Example 1.1:
+```javascript
+if (true) { 
     var globalJob = "Software Engineer"; //block statement does not create new scope for variables
     let localTitle = "Mr"; //we can define local variables inside block statement using es6 let keyword
 }
 console.log(globalJob);  //Software Engineer -> global variable because its defined inside a block statement
 console.log(localTitle); //undefined ->  local variable defined with let inside block statement
+```
 
 
+## Variable hoisting: 
+Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
-//Variable hoisting: Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
-//The example below: Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
+### Example 1.2: Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
+
+```javascript
 console.log(globalHoistedNum); //10 -> global hoisted variable
 var globalHoistedNum = 10;
+```
 
 
-//Scope Chain: It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
+## Scope Chain: 
+It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
 
 
-//Closure: a closure is an inner function that has access to the outer (enclosing) function's variables
+## Closure: 
+A closure is an inner function that has access to the outer (enclosing) function's variables.
+
+### Example 1.3:
+```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
     return function() {
@@ -84,26 +93,33 @@ var add = testClosure();
 add();
 add();
 add();
+```
 
 
+### Aside hint:
+In javascript when we use a variable we are using a reference to that variables.
 
-//In javascript when we use a variable we are using a reference to that variables.
+In the example below: console.log(y) will print 2 not 1 because this assignment operation y = x means that i need to keep a reference to x saved by y,
 
-//In the example below: console.log(y) will print 2 not 1 because this assignment operation y = x means that i need to keep a reference to x saved by y,
-//so whenever x is changed y will also return the changed number because it is saving a reference to a value.
+so whenever x is changed y will also return the changed number because it is saving a reference to a value.
 
+### Example 1.4:
+```javascript
 var x = 1;
 var y = x;
 
 x+=1;
 console.log(y);
+```
 
-//Capture variable values using closure: we can use closure to help us capture a variable value in specific time before it get changed,
+
+## Capture variable values using closure: 
+
+we can use closure to help us capture a variable value in specific time before it get changed,
 //as we leared in the previous section that we save a reference to the variable.
 
-//Example:
-
-
+### Example 1.5:
+```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
 {
@@ -117,9 +133,12 @@ for(var i = 0 ; i < 10 ; i++)
 printValuesArr[0]();
 printValuesArr[5]();
 printValuesArr[9]();
+```
 
+as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-//Now we need to capture the value of i inside each loop using closure
+### Example 1.6 (Capture the value of i inside each loop using closure):
+```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
 {
@@ -135,9 +154,4 @@ for(var i = 0 ; i < 10 ; i++)
 printValuesArr[0](); //0
 printValuesArr[5](); //5
 printValuesArr[9](); //9
-
-
-
-//Resources
-//https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
-//http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/
+```
