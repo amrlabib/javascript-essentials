@@ -1,16 +1,25 @@
-//What is a scope ?
-//A scope is where a variable can be accessed inside your code.
+#Scope, Closures, and Hoisting
+
+##What is a scope ?
+A scope is where a variable can be accessed inside your code.
+
+...
 
 
-//Why Scope matters ?
-//The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables.
-//Resulting in code with less errors
+##Why Scope matters ?
+The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables, resulting in code with less errors
+
+...
 
 
-//In Javascript we have 2 main types of scopes and 1 derived from compining local scopes
-//1- Global Scope: Any variable defined outside all the functions and objects in our code, usually can be accessed under the window object in all browsers.
-//2- Local Scope : Any variables defined inside a function is accessible inside that function only
-//3- Lexical Scope (nested scopes): Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
+##Javascript Scopes:
+**1.Global Scope:** Any variable defined outside all the functions and objects in our code, usually can be accessed under the window object in all browsers.
+
+**2.Local Scope:** Any variables defined inside a function is accessible inside that function only
+
+**3.Lexical Scope (nested scopes):** Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
+
+
 
 
 
@@ -53,7 +62,7 @@ console.log(localTitle); //undefined ->  local variable defined with let inside 
 
 
 
-//Variable hoisting: Hoisting is the ability to use a variable before its declaration.
+//Variable hoisting: Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 //The example below: Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
 console.log(globalHoistedNum); //10 -> global hoisted variable
 var globalHoistedNum = 10;
