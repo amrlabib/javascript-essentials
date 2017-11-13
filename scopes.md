@@ -11,9 +11,9 @@ The existance of scope is important to keep a maintanable less colliding code, t
 
 
 ## Javascript Scopes:
-**1.Global Scope:** Any variable defined outside all the functions and objects in our code, usually can be accessed under the window object in all browsers.
+**1.Global Scope:** Any variable defined outside all the functions and objects in our code, usually can be accessed under `window` object in all browsers.
 
-**2.Local Scope:** Any variables defined inside a function is accessible inside that function only
+**2.Local Scope:** Any variables defined inside a function is accessible inside that function only.
 
 **3.Lexical Scope (nested scopes):** Any variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
 
@@ -28,12 +28,11 @@ Hint: we will start every variable name with its scope type example: globalVarNa
 var globalName = "amr";
 
 function scopeFunction() {
-
     globalMessage = "hello"; //Defined without using var keyword thats why its a global variable.
 
     var localName = "labib"; //Scoped by the current function
 
-    console.log(localName);
+    console.log(localName);  //labib ->  local variable
 }
 
 scopeFunction();
@@ -47,8 +46,8 @@ console.log(localName);        //undefined  -> local variable because its scoped
 ## No Block Scope!: (if, for, while, switch):
 Any variable defined inside a block statement will take the parent scope, usually global scope if defined in global context
 
-## ES6 `let` keyword: 
-In ES6 you can use let inside block statement to scope the vairable.
+### ES6 `let` keyword: 
+In ES6 you can use `let` keyword instead of `var` inside block statement to scope the vairable.
 
 ### Example 1.1:
 ```javascript
