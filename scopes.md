@@ -63,30 +63,28 @@ console.log(localTitle); //undefined ->  local variable defined with let inside 
 
 ---
 
-### Variable hoisting: 
+### Scope Chain: 
+It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
+
+---
+
+### Variable hoisting:
 Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
-#### Example 1.2: 
-Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
 
-```javascript
-console.log(globalHoistedNum); //10 -> global hoisted variable
-var globalHoistedNum = 10;
-```
-
-#### Example 1.3:
-Note in the example below that the value printed inside the function is `undefined` not `10`, this is because variable declaration is hoisted not initialization.
+#### Example 1.2:
+Note in the example below that the value printed inside the function is `undefined` not `ReferenceError: x is not defined` or `10` , this is because variable declaration is hoisted not initialization.
 
 ```javascript
 function hoistingTest()
 {
-    console.log(x);
+    console.log(x); // undefined because x is hoisted
 
     var x = 10;
 }
 ```
 
-The code above is equivalent to 
+The code above is equivalent to
 
 ```javascript
 function hoistingTest()
@@ -101,8 +99,24 @@ function hoistingTest()
 
 ---
 
-### Scope Chain: 
-It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
+### Function hoisting:
+
+In case of functions, hoisting is applied to function declaration, but not to function expressions
+
+#### Example 1.3:
+
+```javascript
+declarationFunc(); //this will print "function declaration is hoisted"
+function declarationFunc()
+{
+    console.log("function declaration is hoisted");
+}
+
+expressionFunc(); //Uncaught TypeError: expressionFunc is not a function
+var expressionFunc = function(){
+    console.log("function expression is not hoisted");
+}
+```
 
 ---
 
