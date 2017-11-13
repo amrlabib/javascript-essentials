@@ -63,7 +63,8 @@ console.log(localTitle); //undefined ->  local variable defined with let inside 
 ## Variable hoisting: 
 Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
-### Example 1.2: Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
+### Example 1.2: 
+Although the variable is defined after the console.log line but the value is printed correctly, this is called variable hoisting
 
 ```javascript
 console.log(globalHoistedNum); //10 -> global hoisted variable
@@ -136,7 +137,9 @@ printValuesArr[9]();
 
 as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-### Example 1.6 (Capture the value of i inside each loop using closure):
+### Example 1.6:
+Capture the value of i inside each loop using closure
+
 ```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
