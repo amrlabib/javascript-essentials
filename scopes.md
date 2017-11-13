@@ -3,13 +3,11 @@
 ## What is a scope ?
 A scope is where a variable can be accessed inside your code.
 
-...
 
 
 ## Why Scope matters ?
 The existance of scope is important to keep a maintanable less colliding code, this will help in separating libraries variables, from your own program variables, resulting in code with less errors
 
-...
 
 
 ## Javascript Scopes:
