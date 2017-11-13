@@ -126,7 +126,7 @@ In javascript when we use a variable assignment we are using a reference to that
 In the example below `console.log(y)` will print 2 not 1 because this assignment operation `y = x` means that `y` is keeping a reference to `x` 
 So whenever `x` is changed `y` will also return the changed value.
 
-#### Example 1.5:
+#### Example 1.4:
 ```javascript
 var x = 1;
 var y = x;
@@ -140,7 +140,7 @@ console.log(y); // 2
 ### Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables.
 
-#### Example 1.4:
+#### Example 1.5:
 ```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
@@ -175,9 +175,9 @@ for(var i = 0 ; i < 10 ; i++)
 
 //All the calls below will print 10, this is because the console.log inside each function is having a reference to i variables,
 //which already changed to become 10.
-printValuesArr[0]();
-printValuesArr[5]();
-printValuesArr[9]();
+printValuesArr[0](); //10
+printValuesArr[5](); //10
+printValuesArr[9](); //10
 ```
 
 as we can see the example 1.5 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
