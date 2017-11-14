@@ -66,13 +66,26 @@ console.log(localTitle); //undefined ->  local variable defined with let inside 
 ### Scope Chain: 
 It’s always the position in the code that defines the scope. When resolving a variable, JavaScript starts at the innermost scope and searches outwards until it finds the variable/object/function it was looking for.
 
+#### Example 1.2:
+
+```javascript
+var x = 1;
+function scopeFunc(){
+    var x = 2;
+
+    console.log(x); //2 -> innermost scope
+}
+scopeFunc();
+console.log(x); //1
+```
+
 ---
 
 ### Variable hoisting:
 Hoisting is the ability to use a variable before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
 
-#### Example 1.2:
+#### Example 1.3:
 Note in the example below that the value printed inside the function is `undefined` not `ReferenceError: x is not defined` or `10` , this is because variable declaration is hoisted not initialization.
 
 ```javascript
@@ -103,7 +116,7 @@ function hoistingTest()
 
 In case of functions, hoisting is applied to function declarations, but not to function expressions
 
-#### Example 1.3:
+#### Example 1.4:
 
 ```javascript
 declarationFunc(); //this will print "function declaration is hoisted"
@@ -126,7 +139,7 @@ In javascript when we use a variable assignment we are using a reference to that
 In the example below `console.log(y)` will print 2 not 1 because this assignment operation `y = x` means that `y` is keeping a reference to `x` 
 So whenever `x` is changed `y` will also return the changed value.
 
-#### Example 1.4:
+#### Example 1.5:
 ```javascript
 var x = 1;
 var y = x;
@@ -140,7 +153,7 @@ console.log(y); // 2
 ### Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables.
 
-#### Example 1.5:
+#### Example 1.6:
 ```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
@@ -164,7 +177,7 @@ we can use closure to help us capture a variable value in specific time before i
 
 As we already learned that we save a reference to the variable.
 
-#### Example 1.6:
+#### Example 1.7:
 ```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
@@ -183,7 +196,7 @@ printValuesArr[9](); //10
 
 as we can see the example 1.6 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-#### Example 1.7:
+#### Example 1.8:
 Capture the value of `i` inside each loop using closure
 
 ```javascript
