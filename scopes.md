@@ -136,9 +136,7 @@ var expressionFunc = function(){
 ### Variable assignment by (Value Or Reference):
 **Primitive** types are assigned by value **(Boolean, Null, Undefined, Number, String, Symbol (new in ES 6))**
 
-**Objects* are assigned by reference **(Object, Array , Functions)**
-
-hint: primitive types are copied by value, while non primitive types are copied by reference
+**Non Primitive** types are assigned by reference **(Object, Array , Functions)**
 
 
 #### Example 1.5:
