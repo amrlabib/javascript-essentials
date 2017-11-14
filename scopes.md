@@ -15,7 +15,7 @@ The existance of scope is important to keep a maintanable less colliding code, t
 
 **2.Local Scope:** Variables defined inside a function and accessible inside that function only.
 
-**3.Lexical Scope (nested scopes):** Variables defined inside a function where this function contains another function, we can consider this as a nested local scopes.
+**3.Lexical Scope (nested scopes):** Variables defined inside a function where this function is contained by another function, we can consider this as a nested local scopes.
 
 ---
 
