@@ -43,6 +43,7 @@ console.log(localName);        //undefined  -> local variable because its scoped
 
 **Hint**:
 Any undeclared variable is added in global scope, we can avoid that by using `strict mode`
+
 ---
 
 ### No Block Scope!: (if, for, while, switch):
