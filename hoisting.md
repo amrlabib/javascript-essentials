@@ -4,7 +4,7 @@ Hoisting is the ability to use a variable or function before its declaration, it
 
 ### Variable hoisting:
 
-#### Example 1.3:
+#### Example 3.0:
 Note in the example below that the value printed inside the function is `undefined` not `ReferenceError: x is not defined` or `10` , this is because variable declaration is hoisted not initialization.
 
 ```javascript
@@ -35,7 +35,7 @@ function hoistingTest()
 
 In case of functions, hoisting is applied to function declarations, but not to function expressions
 
-#### Example 1.4:
+#### Example 3.1:
 
 ```javascript
 declarationFunc(); //this will print "function declaration is hoisted"

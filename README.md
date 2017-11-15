@@ -1,9 +1,23 @@
-# Javascript Essentials, and tricks
+# Javascript Essentials and Tricks
 
-## What is this repository ?
+## Topics: 
+This repository will cover the following topics:
+
+1. Scopes
+2. Value Or Reference
+3. Hoisting
+4. Closures
+5. Immediately Invoked Function Expression (IIFE)
+6. Context (this)
+7. Mutability
+8. Equality
+9. Callbacks
+10. Promises
+
+## Why this repository ?
 * In this repository, i am keeping a reference for each javascript topic that needs to be understood very well, almost all of these topics are known and probably most of javascript developers understand them, but we always have some gaps in our understanding.
 
-* I tried as much as possible to fill these gaps in this repository i tried to read as much books, articles and posts on stackoverflow related to each topic mentioned below, to be able to write a concise well descriptive file for each one of them.
+* I tried as much as possible to fill these gaps in this repository i tried to read as much books, articles and posts on stackoverflow related to each topic mentioned above, to be able to write a concise well descriptive file for each one of them.
 
 * I am not claiming that this is covering everything, but i added as much as possible here based on my understanding for each topic.
 
@@ -17,21 +31,5 @@ For each javascript topic we have:
 1. `topic.md`: includes topic explanation with numbers examples.
 2. `topic.js`: includes topic examples in native javascript code.
 
-All examples are written in native javascript, we are not using 
-
-## Topics: 
-This repository will cover the following topics:
-
-1. Scopes
-2. Value Or Reference
-3. Hoisting
-4. Closures
-5. Immediately Invoked Function Expression (IIFE)
-5. Context (this)
-6. Mutability
-7. Equality
-8. Callbacks
-9. Promises
-
-
+All examples are written in native javascript, we are not using any libraries, we also tried to keep all examples away from DOM elements, to be able to run each of these examples without any need to HTMl or CSS.
 

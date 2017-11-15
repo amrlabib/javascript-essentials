@@ -1,7 +1,7 @@
 # Closure
 A closure is an inner function that has access to the outer (enclosing) function's variables, in JavaScript, if you use the function keyword inside another function, you are creating a closure.
 
-#### Example 1.6:
+#### Example 4.0:
 ```javascript
 var testClosure = function() {
     var counter = 0; //counter is a private property
@@ -25,7 +25,7 @@ we can use closure to help us capture a variable value in specific time before i
 
 As we already learned that we save a reference to the variable.
 
-#### Example 1.7:
+#### Example 4.1:
 ```javascript
 var printValuesArr = [];
 for(var i = 0 ; i < 10 ; i++)
@@ -44,7 +44,7 @@ printValuesArr[9](); //10
 
 as we can see the example 1.6 the correct value of `i` is not captured because we are passing reference to i that already changed by the time we called the function.
 
-#### Example 1.8:
+#### Example 4.2:
 Capture the value of `i` inside each loop using closure
 
 ```javascript

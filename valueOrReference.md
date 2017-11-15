@@ -6,7 +6,7 @@
 **Non Primitive** types are assigned by reference **(Object, Array , Functions)**
 
 
-#### Example 1.5:
+#### Example 2.0:
 Primitive data types are saved in stack directly.
 
 ```javascript
@@ -40,7 +40,7 @@ console.log(x); // 2
 console.log(y); // 1 because y is still holding the old value.
 ```
 
-#### Example 1.6:
+#### Example 2.1:
 Non Primitive data types are saved in heap, variables are just saved in stack with the memory location in heap
 
 ```javascript
