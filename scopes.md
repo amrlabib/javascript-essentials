@@ -41,7 +41,7 @@ console.log(globalMessage);    //hello -> global variable because its defined wi
 console.log(localName);        //undefined  -> local variable because its scoped by scopeFunction function
 ```
 
-**Hint**: Any undeclared variable is added in global scope.
+**Hint**: Any undeclared variable is added in global scope, we can avoid that by using `strict mode`
 ---
 
 ### No Block Scope!: (if, for, while, switch):
@@ -77,3 +77,4 @@ function scopeFunc(){
 scopeFunc();
 console.log(x); //1
 ```
+
