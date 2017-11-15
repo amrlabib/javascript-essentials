@@ -19,7 +19,7 @@ add();
 
 ---
 
-### Capture variable values using closure: 
+### Capture variable values using closure:
 
 we can use closure to help us capture a variable value in specific time before it get changed.
 
