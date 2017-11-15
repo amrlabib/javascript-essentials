@@ -163,6 +163,11 @@ Class hoisting follow the same behaviour of function hoisting, class declaration
 
 ---
 
+### Side note:
+Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
+
+---
+
 ## Summary:
 1. Hoisting is using variables, or functions before declaring them.
 2. Hoisting is applied to declaration not initialization.
@@ -170,10 +175,7 @@ Class hoisting follow the same behaviour of function hoisting, class declaration
 4. Hoisting is done per scope, in global scope variables are hoisted in global scope, while in local "function" scope variables are hoisted in local function scope.
 5. ES6 declaration using `let` and `const` will not be hoisted.
 
----
 
-### Side note:
-Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
 
 
 
