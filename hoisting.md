@@ -1,11 +1,14 @@
 # Hoisting
 Hoisting is the ability to use a variable or function before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
+---
 
 ### Declaration VS Initialization:
 I know this is basic, but its important to perfectly understand hoisting.
 * Declaration: `var x;`
 * Initialization: `x = 10;`
+
+---
 
 ### `undefined` VS `ReferenceError`:
 
@@ -17,7 +20,13 @@ An undeclared variable is assigned the value undefined at execution.
 * `ReferenceError`:
 A ReferenceError is thrown when trying to access a previously undeclared variable.
 
-**Important Hint:** variables are hoisted in it's own execution scope, if a variable is hoisted inside a function it will be hoisted at the top of the function implementation, in another word it will be hoisted in its own local scope.
+---
+
+### Hoisting is scoped:
+
+variables are hoisted in it's own execution scope, if a variable is hoisted inside a function it will be hoisted at the top of the function implementation, in another word it will be hoisted in its own local scope.
+
+---
 
 ### Variable hoisting:
 
