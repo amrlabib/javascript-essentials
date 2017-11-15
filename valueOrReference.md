@@ -119,9 +119,9 @@ Equality with non primitives
 
 ```javascript
 
-var x = { name : "Amr"};
+var x = [1,2,3,4];
 var y = x;
-var z = { name : "Amr"};
+var z = [1,2,3,4];
 
 /*
 Stack          Heap (memory 0101)
