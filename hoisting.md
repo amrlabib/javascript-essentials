@@ -24,7 +24,7 @@ A ReferenceError is thrown when trying to access a previously undeclared variabl
 
 ### Hoisting is scoped:
 
-variables are hoisted in it's own execution scope, if a variable is hoisted inside a function it will be hoisted at the top of the function implementation, in another word it will be hoisted in its own local scope.
+Variables are hoisted in it's own execution scope, a local scope declared variable will be hoisted locally, while a global scope declared variable will be hoisted globally.
 
 ---
 
@@ -66,6 +66,7 @@ function hoistingTest()
 
     var x = 10;     // hoisted in its own local (function) scope
 }
+hoistingTest();
 ```
 
 The code above is equivalent to
@@ -82,6 +83,8 @@ function hoistingTest()
 
     x = 10;
 }
+
+hoistingTest();
 ```
 
 ---
