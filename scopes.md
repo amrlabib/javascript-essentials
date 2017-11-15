@@ -27,7 +27,7 @@ In javascript variables can be scoped using functions.
 var globalName = "amr";
 
 function scopeFunction() {
-    globalMessage = "hello"; //Defined without using var keyword thats why its a global variable.
+    globalMessage = "hello"; //undeclared variable defined without using var keyword thats why its a global variable.
 
     var localName = "labib"; //Scoped by the current function
 
@@ -41,6 +41,7 @@ console.log(globalMessage);    //hello -> global variable because its defined wi
 console.log(localName);        //undefined  -> local variable because its scoped by scopeFunction function
 ```
 
+**Hint**: Any undeclared variable is added in global scope.
 ---
 
 ### No Block Scope!: (if, for, while, switch):
@@ -51,7 +52,7 @@ In ES6 you can use `let` keyword instead of `var` inside block statement to crea
 
 #### Example 1.1:
 ```javascript
-if (true) { 
+if (true) {
     var globalJob = "Software Engineer"; //block statement does not create new scope for variables
     let localTitle = "Mr"; //we can define local variables inside block statement using es6 let keyword
 }

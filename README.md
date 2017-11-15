@@ -17,9 +17,11 @@ This repository will cover the following topics:
 ## Why this repository ?
 * In this repository, i am keeping a reference for each javascript topic that needs to be understood very well, almost all of these topics are known and probably most of javascript developers understand them, but we always have some gaps in our understanding.
 
-* I tried as much as possible to fill these gaps in this repository i tried to read as much books, articles and posts on stackoverflow related to each topic mentioned above, to be able to write a concise well descriptive file for each one of them.
+* We tried as much as possible to fill these gaps in this repository i tried to read as much books, articles and posts on stackoverflow related to each topic mentioned above, to be able to write a concise well descriptive file for each one of them.
 
-* I am not claiming that this is covering everything, but i added as much as possible here based on my understanding for each topic.
+* We are not claiming that this is covering everything, but we added as much as possible here based on our understanding for each topic.
+
+* Although some of these topics might not be related, but the order of the topics mentioned above will help understanding to understand them better.
 
 * The topics and all explanations considers that you have already some experience in javascript, at least you know variables, objects and functions and you already worked with each one of them in javascript.
 
