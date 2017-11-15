@@ -1,5 +1,4 @@
-
-### Closure: 
+## Closure: 
 A closure is an inner function that has access to the outer (enclosing) function's variables, in JavaScript, if you use the function keyword inside another function, you are creating a closure.
 
 #### Example 1.6:

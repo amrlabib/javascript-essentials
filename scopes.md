@@ -1,6 +1,4 @@
-# Scope, Hoisting , and Closure
-
-### What is a scope ?
+## Scope
 A scope is where a variable can be accessed inside your code.
 
 ---
