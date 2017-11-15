@@ -1,4 +1,4 @@
-## Value Or Reference
+# Value Or Reference
 
 ### Variable assignment by (Value Or Reference):
 **Primitive** types are assigned by value **(Boolean, Null, Undefined, Number, String, Symbol (new in ES 6))**

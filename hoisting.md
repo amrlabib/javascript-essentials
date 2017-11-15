@@ -1,4 +1,4 @@
-##Hoisting
+# Hoisting
 Hoisting is the ability to use a variable or function before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
 

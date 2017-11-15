@@ -1,4 +1,4 @@
-## Scope
+# Scope
 A scope is where a variable can be accessed inside your code.
 
 ---
