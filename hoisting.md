@@ -161,6 +161,7 @@ var expressionFunc = function(){
 ### Class hoisting:
 Class hoisting follow the same behaviour of function hoisting, class declaration is hoisting while expression is not.
 
+---
 
 ## Summary:
 1. Hoisting is using variables, or functions before declaring them.
