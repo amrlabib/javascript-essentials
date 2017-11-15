@@ -2,23 +2,28 @@
 Hoisting is the ability to use a variable or function before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
 
 
+### Declaration VS Initialization:
+I know this is basic, but its important to perfectly understand hoisting.
+* Declaration: `var x;`
+* Initialization: `x = 10;`
+
 ### `undefined` VS `ReferenceError`:
 
 `undefined` and `ReferenceError` are two completely different things.
 
 * `undefined`:
-An undeclared variable is assigned the value undefined at execution and is also of type undefined.
+An undeclared variable is assigned the value undefined at execution.
 
 * `ReferenceError`:
-A `ReferenceError` is thrown when trying to access a previously undeclared variable.
+A ReferenceError is thrown when trying to access a previously undeclared variable.
 
-**Important Hint:** variables are hoisted in it's own execution scope, if a variable is hoisted inside a function it will be hoisted at the top of the function body implementation, in another word it will be hoisted in its local scope.
+**Important Hint:** variables are hoisted in it's own execution scope, if a variable is hoisted inside a function it will be hoisted at the top of the function implementation, in another word it will be hoisted in its own local scope.
 
 ### Variable hoisting:
 
-Variables can be used before its declaration.
-
 #### Example 3.0;
+
+Variables can be used before its declaration.
 
 ```javascript
 console.log(x); //undefined --> because declaration of x is hoisted and initialized to undefined.
@@ -29,7 +34,8 @@ var x = "hoisted"; //only declaration is hoisted
 
 #### Example 3.1:
 
-To emphasize that only variable declaration is hoisted lets check the next example
+Emphasize that only variable declaration is hoisted.
+
 ```javascript
 
 console.log(x);    //ReferenceError: x is not defined
@@ -39,13 +45,15 @@ x = "not hoisted"; //variable x is not hoisted as we didn't declare it, here we 
 
 #### Example 3.2:
 
+Emphasize that hoisting is applied inside current execution scope.
+
 ```javascript
 
 console.log(x); //ReferenceError: x is not defined
 
 function hoistingTest()
 {
-    console.log(x); // undefined because x is hoisted
+    console.log(x); // undefined because x is hoisted inside the function
 
     var x = 10;     // hoisted in its own local (function) scope
 }
@@ -55,7 +63,7 @@ The code above is equivalent to
 
 ```javascript
 
-console.log(x); //ReferenceError: x is not defined
+console.log(x);
 
 function hoistingTest()
 {
