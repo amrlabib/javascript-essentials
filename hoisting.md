@@ -7,7 +7,7 @@ This is because in javascript variable declarations (and declarations in general
 ---
 
 ### Declaration VS Initialization:
-I know this is basic, but its important to perfectly understand hoisting.
+I know this is basic, but it's important to perfectly understand hoisting.
 * Declaration: `var x;`
 * Initialization: `x = 10;`
 
@@ -95,24 +95,24 @@ Tricky
 
 ```javascript
 console.log(x); //undefined
-console.log(y); //ReferenceError: x is not defined --> because b is undeclared variable
+console.log(y); //ReferenceError: y is not defined --> because y is undeclared variable
 var x = y = 10;
 ```
 
-while
+The right way
 
 ```javascript
 console.log(x); //undefined
-console.log(y); //undefined --> because b is now a declared variable
+console.log(y); //undefined --> because y is now a declared variable
 var x, y = 10;
 ```
 
 ---
 
 ### ES6 declaration keywords (`let` and `const`):
-variable declaration is not hoisted when we use `let` or `const`
+Variable declaration is not hoisted when we use `let` or `const`
 
-#### Example 3.3:
+#### Example 3.4:
 
 ```javascript
 
@@ -129,7 +129,7 @@ const y = 0;
 
 In case of functions hoisting is applied to function declarations, but not to function expressions
 
-#### Example 3.4:
+#### Example 3.5:
 
 Function declaration is hoisted.
 
@@ -143,7 +143,7 @@ function declarationFunc()
 }
 ```
 
-#### Example 3.5:
+#### Example 3.6:
 
 Function expression is not hoisted.
 
@@ -159,7 +159,7 @@ var expressionFunc = function(){
 ---
 
 ### Class hoisting:
-class hoisting follow the same behaviour of function hoisting, class declaration is hoisting while expression is not.
+Class hoisting follow the same behaviour of function hoisting, class declaration is hoisting while expression is not.
 
 
 ## Summary:
@@ -168,6 +168,8 @@ class hoisting follow the same behaviour of function hoisting, class declaration
 3. hoisted variables are all initialized to `undefined`
 4. Hoisting is done per scope, in global scope variables are hoisted in global scope, while in local "function" scope variables are hoisted in local function scope.
 5. ES6 declaration using `let` and `const` will not be hoisted.
+
+---
 
 ### Side note:
 Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
