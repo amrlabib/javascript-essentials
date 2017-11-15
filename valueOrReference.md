@@ -1,9 +1,9 @@
 # Value Or Reference
 
 ### Variable assignment by (Value Or Reference):
-**Primitive** types are assigned by value **(Boolean, Null, Undefined, Number, String, Symbol (new in ES 6))**
+* **Primitive types** are assigned by value **(Boolean, Null, Undefined, Number, String, Symbol (new in ES 6))**
 
-**Non Primitive** types are assigned by reference **(Object, Array , Functions)**
+* **Non Primitive types** are assigned by reference **(Object, Array , Functions)**
 
 
 #### Example 2.0:
@@ -24,7 +24,7 @@ Stack
 -----
 */
 
-x+=1;  // x is incremented, and since numbers are immutable type, the varaibles x will be assigned to a new object and will keep the old value as is because its immutable.
+x+=1;  // x is incremented, and since numbers are immutable type, the variables x will be assigned to a new object and will keep the old value as is because its immutable.
 
 /*
 Stack
