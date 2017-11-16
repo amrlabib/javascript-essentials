@@ -9,9 +9,9 @@
 
 Value or Reference is also related to the fact that primitive types are immutable while non primitives are mutable.
 
-* **Immutable:** immutable data can't change its state, change a variable value from 1 to 2 means creating a new memory location for value 2.
+* **Immutable:** immutable data can't change its state, change a variable value from `1` to `2` means creating a new memory location for value 2.
 
-* **Mutable:** mutable data can change its state, changing object from  { first : "Amr" } to  {first : "Amr" , last: "Labib"} will change it in the current memory location without creating any new object for it.
+* **Mutable:** mutable data can change its state, changing object from  `{ first : "Amr" }` to  `{first : "Amr" , last: "Labib"}` will change it in the current memory location without creating any new object for it.
 
 #### Example 2.0:
 Primitive data types are saved in stack directly.
