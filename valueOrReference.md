@@ -7,7 +7,7 @@
 
 ### Mutability:
 
-Value or Reference is also related to the fact that primitve types are immutable while non primitives are mutable.
+Value or Reference is also related to the fact that primitive types are immutable while non primitives are mutable.
 
 * **Immutable:** immutable data can't change its state, change a variable value from 1 to 2 means creating a new memory location for value 2.
 
@@ -152,7 +152,7 @@ console.log(x == z) //false ---> although both arrays are exactly the same but t
 
 #### Example 2.4:
 
-Passing primitves and non primitives to function parameter will follow the same rules.
+Passing primitives and non primitives to function parameter will follow the same rules.
 
 ```javascript
 var x = 1;
