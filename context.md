@@ -1,27 +1,41 @@
-/*
-All cases of this context:
+## Context
+Context is the value of `this` in each part of your code.
 
-1- Global Execution context:
+
+### All cases of this context:
+
+1. Global Execution context:
 this is when we call a function in the global window context
 
-2- Eval:
--Direct call to evan, will keep this context as is not changed, as the execution context of its caller
--Indirect call 
+2. Entering function code:
+-If the function is called on object `this` value is bound to that object
+-If the function is just called , `this` is bound to global object
 
+3. Special case functions like , `bind`,`call`,`apply` can change this context to any passed object.
 
-3- Entering function code:
--If the function is called on object the this value is bound to that object
--If the function is just called , this is bound to global object
+4. Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
 
-4- Special case functions like , bind,call,apply can change this context
+5. Eval:
+-Direct call to eval, will keep this context as is not changed, as the execution context of its caller
+-Indirect call
 
-5- Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
+#### Example 6.0:
 
-*/
+`this` is bound to global object when we call global scope function.
 
+```javascript
+console.log(this); //global window object if in browser
+```
 
-////
+#### Example 6.1:
 
+`this` inside a function is bound to the object that called the function
+
+```javascript
+function globalFunction(){
+	console.log(this); //global window object if in browser
+}
+globalFunction();
 
 var myObject = {
   myFunc : function(){
@@ -29,32 +43,30 @@ var myObject = {
   }
 }
 
-
-
 myObject.myFunc(); //this line will print this as MyObject because the function is called on an object
 
 var temp = myObject.myFunc;
-temp(); //this line will print window because the function is called and executed without an object
+temp(); //this line will print window object because the function is called and executed without an object
 
+```
 
+#### Example 6.2:
 
-
-
-
-
-
+```javascript
 
 function myFun() {
     console.log(this);
 }
+
 var obj = {
     myMethod : function () {
         eval("myFun()");
     }
 };
+
 obj.myMethod(); //this will print window because the eval called the myFunc function without an object
 
-
+```
 
 
 
