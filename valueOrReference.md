@@ -58,7 +58,7 @@ var x = [1,2,3];
 var y = x;
 
 /*
-Stack          Heap (memory 0101)
+Stack          Heap (memory location 0101)
 ------         -------------
 |0101| x  ---> |           |
 ------         | [1,2,3]   |
@@ -72,7 +72,7 @@ x.push(4);
 
 
 /*
-Stack          Heap (memory 0101)
+Stack          Heap (memory location 0101)
 ------         -------------
 |0101| x  ---> |           |
 ------         | [1,2,3,4] |
@@ -124,7 +124,7 @@ var y = x;
 var z = [1,2,3,4];
 
 /*
-Stack          Heap (memory 0101)
+Stack          Heap (memory location 0101)
 ------         -------------
 |0101| x  ---> |           |
 ------         | [1,2,3,4] |
@@ -132,7 +132,7 @@ Stack          Heap (memory 0101)
 |0101| y  ---> |           |
 ------         -------------
 
-               Heap (memory 0110)
+               Heap (memory location 0110)
 ------         -------------
 |0110| z  ---> | [1,2,3,4] |
 ------         -------------
@@ -141,5 +141,28 @@ Stack          Heap (memory 0101)
 console.log(x == y) //true ---> comparing 2 identical memory locations 0101 == 0101 is true
 console.log(x == z) //false ---> although both arrays are exactly the same but the result is false because we are comparing 2 different memory locations 0101 == 0110 is false
 
+```
+
+#### Example 2.4:
+
+Passing primitves and non primitives to function parameter will follow the same rules.
+
+```javascript
+var x = 1;
+var obj = { name : "Amr" };
+
+function changeValues(primitive , nonPrimitive )
+{
+    primitive++;
+    nonPrimitive.last = "Labib";
+
+    console.log(primitive);     // 2 
+    console.log(nonPrimitive);  // {name: "Amr", last: "Labib"}
+}
+
+changeValues(x , obj);
+
+console.log(x);     //1 --> didn't change because value changed inside function created new memory location for it.
+console.log(obj);   //{name: "Amr", last: "Labib"} --> changed because its a non primitive and obj passed to function by reference and the changed value is changed in reference
 ```
 
