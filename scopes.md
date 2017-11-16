@@ -27,7 +27,7 @@ In javascript variables can be scoped using functions.
 var globalName = "amr";
 
 function scopeFunction() {
-    globalMessage = "hello"; //undeclared variable defined without using var keyword thats why its a global variable.
+    globalMessage = "hello"; //undeclared variable initialization without using var keyword thats why its a global variable.
 
     var localName = "labib"; //Scoped by the current function
 
@@ -42,15 +42,15 @@ console.log(localName);        //undefined  -> local variable because its scoped
 ```
 
 **Hint**:
-Any undeclared variable is added in global scope, we can avoid that by using `strict mode`
+Any undeclared variable initialization is added under global scope, we can avoid that by using `strict mode`
 
 ---
 
 ### No Block Scope!: (if, for, while, switch):
 Variables defined inside a block statement will take the parent scope.
 
-#### ES6 `let` keyword: 
-In ES6 you can use `let` keyword instead of `var` inside block statement to create local scope variable to that block statement.
+#### ES6 `let` and `const` keywords: 
+In ES6 you can use `let` or `const` keywords instead of `var` inside block statement to create local scope variable to that block statement.
 
 #### Example 1.1:
 ```javascript
@@ -73,10 +73,15 @@ It’s always the position in the code that defines the scope. When resolving a 
 var x = 1;
 function scopeFunc(){
     var x = 2;
-
-    console.log(x); //2 -> innermost scope
+    function innerScopeFunc(){
+    	var x = 3;
+    	console.log(x) //3 --> innermost scope
+    }
+    innerScopeFunc();
+    console.log(x);    //2 -> second innermost scope
 }
+
 scopeFunc();
-console.log(x); //1
+console.log(x); //1 global scope
 ```
 
