@@ -1,15 +1,22 @@
 ## Context
-Context is the value of `this` in each part of your code.
+* Context is the value of `this` in each part of your code.
+
+* Function context depends on how the function is called, this is called the innvocation pattern.
+
+
+
 
 
 ### All cases of this context:
 
-1. Global Execution context:
-this is when we call a function in the global window context
+1. Global context:
+this is bound to global object when used globally.
 
-2. Entering function code:
--If the function is called on object `this` value is bound to that object
--If the function is just called , `this` is bound to global object
+2. Function Context:
+* As Function: function is just called , `this` is bound to global `window` object.
+
+* As Method: function is called under object, `this` is bound to that object.
+
 
 3. Special case functions like , `bind`,`call`,`apply` can change this context to any passed object.
 
@@ -53,7 +60,7 @@ temp(); //this = window --> because the function is called and executed from glo
 
 ---
 
-### `bind`,`call`,`apply`:
+### `bind`,`call` and `apply` methods:
 
 These three methods can by used to change `this` context value inside any function to any required object.
 
@@ -118,6 +125,28 @@ printName.apply(obj); // Amr Labib undefined undefined
 printName.call(obj , ["argument 1" , "argument 2"]); //Amr Labib [argument 1 , argument 2] undefined
 
 ```
+
+---
+
+#### Example 6.3:
+
+Construction of new object
+
+```javascript
+
+var Name = function(){
+	this.first = "Amr";
+	this.last = "Labib";
+}
+
+var obj1 = new Name(); //this == Name Object 
+
+console.log(obj1.first);
+
+```
+
+**Hint:**
+By Convention we use Capitalized function name for constructors in javascript.
 
 ---
 
