@@ -21,8 +21,6 @@ this is bound to global object when used globally.
 
 4. Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
 
- * Indirect cal
-
 #### Example 6.0:
 
 `this` is bound to global object.
@@ -59,7 +57,7 @@ temp(); //this = window --> because the function is called and executed from glo
 
 ### `bind`,`call` and `apply` methods:
 
-These three methods can by used to change `this` context value inside any function to any required object.
+These three methods can be used to change `this` context value inside any function to any required object.
 
 ---
 
@@ -100,7 +98,7 @@ boundPrintNameWithArgument("argument 2"); //Amr Labib argument 1 argument 2
 
 #### Example 6.3:
 
-Notice the difference between `call` and `apply` is just how they accept arguments after this object.
+Notice the difference between `call` and `apply` is just how they accept arguments after passed `this` object.
 
 ```javascript
 
@@ -143,7 +141,7 @@ console.log(obj1.first);
 ```
 
 **Hint:**
-By Convention we use Capitalized function name for constructors in javascript.
+By Convention we use capitalize the first letter in function when we use it as constructor.
 
 ---
 
