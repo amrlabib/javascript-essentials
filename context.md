@@ -59,7 +59,7 @@ These three methods can by used to change `this` context value inside any functi
 
 ---
 
-`bind `: creates a new function that, when called, has its this keyword set to the provided value, it also accept optional arguments that will be prepended to the argument list of the new return function.
+`bind `: creates a new function that, when called, has its this keyword set to the provided value, it also accept optional arguments that will be prepended to the argument list of the new returned function.
 
 
 #### Example 6.2:
@@ -77,11 +77,11 @@ function printName(){
 
 printName(); // undefined undefined undefined undefined  --> because this is bound to global window object, also we don't have any argument passed to the function
 
-var boundPrintName = printName.bind(obj); // will return new function with this context bound to obj
+var boundPrintName = printName.bind(obj); // will return a new function with this context bound to obj
 
 boundPrintName(); // Amr Labib undefined undefined
 
-var boundPrintNameWithArgument = printName.bind(obj , "argument 1"); //will return new function with this context bound to obj and first argument set to "Software Engineer"
+var boundPrintNameWithArgument = printName.bind(obj , "argument 1"); //will return new function with this context bound to obj and first argument set to "argument 1"
 
 boundPrintNameWithArgument("argument 2"); //Amr Labib argument 1 argument 2
 
@@ -96,10 +96,26 @@ boundPrintNameWithArgument("argument 2"); //Amr Labib argument 1 argument 2
 
 #### Example 6.3:
 
+Notice the difference between `call` and `apply` is just how they accept arguments after this object.
+
 ```javascript
 
+var obj= {
+	first: "Amr",
+	last: "Labib"
+}
 
+function printName(){
+	console.log(this.first +  " " + this.last , arguments[0] , arguments[1] );
+}
 
+printName(); // undefined undefined undefined undefined  --> because this is bound to global window object, also we don't have any argument passed to the function
+
+printName.call(obj); // Amr Labib undefined undefined
+printName.call(obj , "argument 1" , "argument 2"); //Amr Labib argument 1 argument 2
+
+printName.apply(obj); // Amr Labib undefined undefined
+printName.call(obj , ["argument 1" , "argument 2"]); //Amr Labib [argument 1 , argument 2] undefined
 
 ```
 
