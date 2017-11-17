@@ -13,10 +13,9 @@
 this is bound to global object when used globally.
 
 2. Function Context:
-* As Function: function is just called , `this` is bound to global `window` object.
+ * As Function: function is just called , `this` is bound to global `window` object.
 
-* As Method: function is called under object, `this` is bound to that object.
-
+ * As Method: function is called under object, `this` is bound to that object.
 
 3. Special case functions like , `bind`,`call`,`apply` can change this context to any passed object.
 
@@ -166,3 +165,34 @@ var obj = {
 
 obj.myMethod(); // this = window --> because the eval called the myFunc function without an object
 ```
+
+---
+
+#### Example 6.3:
+
+Use `call` with self invoked function to set `this` context inside each loop iteration
+
+```javascript
+var numbers = [{
+  number : {
+  	value : 1 
+  }
+},{
+  number : {
+  	value : 2
+  }
+},{
+  number : {
+  	value : 3
+  }
+}];
+
+for (var i = 0; i < numbers.length; i++) {
+  (function () {
+    console.log(this);
+  }).call(numbers[i].number);
+}
+
+
+```
+
