@@ -22,8 +22,9 @@ this is bound to global object when used globally.
 4. Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
 
 5. Eval:
--Direct call to eval, will keep this context as is not changed, as the execution context of its caller
--Indirect call
+ * Direct call to eval, will keep this context as is not changed, as the execution context of its caller.
+ 
+ * Indirect cal
 
 #### Example 6.0:
 
