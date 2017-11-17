@@ -127,7 +127,7 @@ printName.call(obj , ["argument 1" , "argument 2"]); //Amr Labib [argument 1 , a
 
 ---
 
-#### Example 6.3:
+#### Example 6.4:
 
 Construction of new object
 
@@ -149,7 +149,9 @@ By Convention we use Capitalized function name for constructors in javascript.
 
 ---
 
-#### Example 6.2:
+#### Example 6.5:
+
+Eval context
 
 ```javascript
 
@@ -168,7 +170,7 @@ obj.myMethod(); // this = window --> because the eval called the myFunc function
 
 ---
 
-#### Example 6.3:
+#### Example 6.6:
 
 Use `call` with self invoked function to set `this` context inside each loop iteration
 
