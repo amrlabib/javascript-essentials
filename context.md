@@ -21,9 +21,6 @@ this is bound to global object when used globally.
 
 4. Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
 
-5. Eval:
- * Direct call to eval, will keep this context as is not changed, as the execution context of its caller.
- 
  * Indirect cal
 
 #### Example 6.0:
@@ -151,27 +148,6 @@ By Convention we use Capitalized function name for constructors in javascript.
 ---
 
 #### Example 6.5:
-
-Eval context
-
-```javascript
-
-function myFun() {
-    console.log(this);
-}
-
-var obj = {
-    myMethod : function () {
-        eval("myFun()");
-    }
-};
-
-obj.myMethod(); // this = window --> because the eval called the myFunc function without an object
-```
-
----
-
-#### Example 6.6:
 
 Use `call` with self invoked function to set `this` context inside each loop iteration
 
