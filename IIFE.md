@@ -49,7 +49,7 @@ var printName = function(){
 
 ---
 
-### Tell parser to expect an expression
+### Tell parser to expect function expression
 
 We have multiple ways to tell the parser to expect an expression instead of declaration when it encouter function keyword, and this will make it possible to immediately invoke the function.
 
@@ -115,6 +115,72 @@ var y = 2;
 
 ```
 
+
+### Why IIFE ? :
+
+1. One of the common uses of IIFE is the module pattern (namespace) implemented as a singleton.
+
+2. Commonly used with closures.
+
+3. Generally any situation when you need to invoke an anonymous function once, without adding any variables.
+
+--- 
+
+#### Example 5.3:
+
+Module pattern
+
+```javascript
+var Module = (function () {
+  //private variable and method can't be accessed using Module.increment
+  var num = 1;
+  var logNum = function () {
+  	console.log(num);
+  };
+
+  return {
+  	//public methods, we say they are public because we can access them using Module.increment or Module.decrement
+    increment: function () {
+    	num++;
+    	logNum();
+    },
+    decrement: function () {
+    	num--;
+    	logNum();
+    }
+  };
+
+})();
+
+Module.increment(); //2
+Module.increment(); //3
+Module.decrement(); //2
+
+Module.logNum(); //TypeError Module.logNum is not a function --> becaise logNum is private method inside the module
+```
+
+
+#### Example 5.4:
+
+Save state with IIFE and closure, this is a copy from example 4.3 but using IIFE
+
+Capture the value of `i` inside each loop using closure (fix Example 4.1)
+
+```javascript
+var printValuesArr = [];
+for(var i = 0 ; i < 10 ; i++)
+{
+    printValuesArr.push((function(capturedI){
+    	return function(){
+            console.log(capturedI);
+        };
+    })(i)); //the i we passed here is how we capture the i value
+}
+
+printValuesArr[0](); //0
+printValuesArr[5](); //5
+printValuesArr[9](); //9
+```
 
 
 
