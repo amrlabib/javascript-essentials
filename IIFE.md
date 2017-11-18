@@ -156,7 +156,6 @@ var Module = (function () {
 Module.increment(); //2
 Module.increment(); //3
 Module.decrement(); //2
-
 Module.logNum(); //TypeError Module.logNum is not a function --> becaise logNum is private method inside the module
 ```
 
