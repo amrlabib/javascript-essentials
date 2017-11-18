@@ -33,5 +33,5 @@ For each javascript topic we have:
 1. `topic.md`: includes topic explanation with numbers examples.
 2. `topic.js`: includes topic examples in native javascript code.
 
-All examples are written in native javascript, we are not using any libraries, we also tried to keep all examples away from DOM elements, to be able to run each of these examples without any need to HTMl or CSS.
+All examples are written in native javascript, we are not using any libraries, we also tried to keep all examples away from DOM elements, to be able to run each of these examples without any need to HTML or CSS.
 

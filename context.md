@@ -4,9 +4,6 @@
 * Function context depends on how the function is called, this is called the innvocation pattern.
 
 
-
-
-
 ### All cases of this context:
 
 1. Global context:
