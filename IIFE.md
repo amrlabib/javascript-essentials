@@ -22,28 +22,28 @@ A function expression, defines a function using a variable assignment expression
 
 ---
 
-### Expression can be invoked but not declaration:
-* In javascript, trying to invoke function declaration is not possible it will result in an error.
+### Expression can be immediately invoked but not declaration:
+* In javascript, trying to immediately invoke function declaration is not possible it will result in an error.
 
-* To be able to immediately invoke a function declaration using `()` you need to tell the parser to expect an expression.
+* To be able to immediately invoke a function declaration using the `()` you need to tell the parser to expect an expression.
 
 
 #### Example 5.0:
 
-In this example we will show the difference between immediately invoking declaration and expression.
+In this example we will show the difference between immediately invoking function declaration and expression .
 
 ```javascript
 
 //function declaration
 function printName(){
 	console.log("Amr Labib");
-}() //SyntaxError: Unexpected token ) because parser considers () is a completely different expression than the function and it expected to have an actual expression inside the parentheses like (1+2) but found nothing.
+}() //SyntaxError: Unexpected token ) because parser considers parentheses () a completely different expression not related to the function and it expected to have an actual expression inside the parentheses like (1+2) but found nothing.
 
 
 //function expression
 var printName = function(){
 	console.log("Amr Labib");
-}() // Amr Labib --> because parser found function expression before (), and the parentheses are considered to call the function.
+}() // Amr Labib --> because parser found function expression before (), and the parentheses correctly invoked the function
 
 ```
 
@@ -79,7 +79,7 @@ true && function(){
 
 ### Pass parameters to IIFE:
 
-One of the most confusing things about IIFE is the way it accept its parameters, because we pass them at the bottom of the function while invoking them.
+One of the most confusing things about IIFE is the way it accept its parameters, because we pass them at the bottom of the function while invoking it.
 
 #### Example 5.2:
 
@@ -162,9 +162,9 @@ Module.logNum(); //TypeError Module.logNum is not a function --> becaise logNum 
 
 #### Example 5.4:
 
-Save state with IIFE and closure, this is a copy from example 4.3 used in closure but using IIFE instead of named function
+Save state with IIFE and closure, this is a copy from example 4.3 used in closures section but using IIFE instead of named function.
 
-Capture the value of `i` inside each loop using closure (fix Example 4.1)
+Capture the value of `i` inside each loop.
 
 ```javascript
 var printValuesArr = [];
@@ -174,7 +174,7 @@ for(var i = 0 ; i < 10 ; i++)
     	return function(){
             console.log(capturedI);
         };
-    })(i)); //the i we passed here is how we capture the i value
+    })(i)); //this is how we captured the i value by passing it to the IIFE in each iteration
 }
 
 printValuesArr[0](); //0
