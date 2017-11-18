@@ -115,6 +115,7 @@ var y = 2;
 
 ```
 
+---
 
 ### Why IIFE ? :
 
@@ -162,7 +163,7 @@ Module.logNum(); //TypeError Module.logNum is not a function --> becaise logNum 
 
 #### Example 5.4:
 
-Save state with IIFE and closure, this is a copy from example 4.3 but using IIFE
+Save state with IIFE and closure, this is a copy from example 4.3 used in closure but using IIFE instead of named function
 
 Capture the value of `i` inside each loop using closure (fix Example 4.1)
 
