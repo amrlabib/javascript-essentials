@@ -84,7 +84,7 @@ var y = x;
 
 x = 2;
 
-console.log(x == y); //false --> because changing x to be equal to 2 created new memory location for it and kept the old value 1 as saved in y.
+console.log(x == y); //false --> because changing x to be equal to 2 created new memory location for it and kept the old value 1 as is saved in y.
 
 ```
 
