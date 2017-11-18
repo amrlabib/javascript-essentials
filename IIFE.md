@@ -22,7 +22,7 @@ A function expression, defines a function using a variable assignment expression
 
 ---
 
-### Expression can be invoked not declaration:
+### Expression can be invoked but not declaration:
 * In javascript, trying to invoke function declaration is not possible it will result in an error.
 
 * To be able to immediately invoke a function declaration using `()` you need to tell the parser to expect an expression.
@@ -30,7 +30,7 @@ A function expression, defines a function using a variable assignment expression
 
 #### Example 5.0:
 
-In this example we will show the differences between declaration, expressions and the result of immediately invoking them.
+In this example we will show the difference between immediately invoking declaration and expression.
 
 ```javascript
 
@@ -63,17 +63,59 @@ We have multiple ways to tell the parser to expect an expression instead of decl
 
 (function(){
 	console.log("this function is immediately invoked");
-}());
+}()); // this function is immediately invoked
 
 !function(){
 	console.log("this function is immediately invoked");
-}();
+}(); // this function is immediately invoked
 
-function(){
+true && function(){
 	console.log("this function is immediately invoked");
-}();
+}(); // this function is immediately invoked
 
 ```
+
+---
+
+### Pass parameters to IIFE:
+
+One of the most confusing things about IIFE is the way it accept its parameters, because we pass them at the bottom of the function while invoking them.
+
+#### Example 5.2:
+
+One of the common mistakes while passing parameters is to mix function definition parameters and the actual passed parameter.
+
+```javascript
+
+// Wrong way
+var x = 1;
+var y = 2;
+(function(x,y){
+	console.log(x + y);
+}()); 
+//NaN --> because x and y are both undefined
+
+
+// The right way
+var x = 1;
+var y = 2;
+(function(x,y){ //x and y here are just the expected parameters by the function
+	console.log(x + y);
+}(x,y)); //Here we pass actual values of x and y
+// 3 --> because we passed x and y at the bottom of the function while invoking it.
+
+
+// Better less confusing way
+var x = 1;
+var y = 2;
+(function(num1,num2){ //changed funtion expected parameters names to make it clear that they are different from the actual passed values
+	console.log(num1 + num2);
+}(x,y)); 
+// 3 --> because we passed x and y at the bottom of the function while invoking it.
+
+```
+
+
 
 
 
