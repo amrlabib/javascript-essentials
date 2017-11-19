@@ -174,6 +174,6 @@ function changeValues(primitive , nonPrimitive )
 changeValues(x , obj);
 
 console.log(x);     //1 --> didn't change because it immutable, value changed inside function created new memory location for it.
-console.log(obj);   //{name: "Amr", last: "Labib"} --> changed because its a non primitive and obj passed to function by reference and the changed value is changed in referenced location
+console.log(obj);   //{name: "Amr", last: "Labib"} --> changed because its mutable non primitive and obj passed to function by reference and the changed value is changed in referenced location
 ```
 

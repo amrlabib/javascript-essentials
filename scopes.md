@@ -17,7 +17,7 @@ The existance of scope is important to keep a maintanable less colliding code, t
 
 ---
 
-### Function scope:
+### Function scope (Local Scope):
 In javascript variables can be scoped using functions.
 
 #### Example 1.0:
