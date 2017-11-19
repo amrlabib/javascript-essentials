@@ -3,14 +3,14 @@
 ## Topics:
 This repository will cover the following topics:
 
-1. Scopes
-2. Value Or Reference
-3. Hoisting
-4. Closures
-5. Immediately Invoked Function Expression (IIFE)
-6. Context (this)
-7. Mutability
-8. Equality
+1. [Scopes](scopes.md)
+2. [Value Or Reference](valueOrReference.md)
+3. [Hoisting](hoisting.md)
+4. [Closures](closure.md)
+5. [Immediately Invoked Function Expression (IIFE)](IIFE.md)
+6. [Context (this)](context.md)
+7. [Mutability](mutability.md)
+8. [Equality](equality.md)
 9. Callbacks
 10. Promises
 
@@ -22,5 +22,5 @@ This repository will cover the following topics:
 For each javascript topic we have:
 * `topic.md`: includes topic explanation with numbers examples.
 
-All examples are written in pure javascript.
+* All examples are written in pure javascript.
 
