@@ -1,6 +1,6 @@
 ## Callback Functions:
 
-A callback also known as Higher-order Functions is a function passed as a parameter to another function, then executed inside that function.
+A callback also known as Higher-order Functions is a function passed as a parameter to another function, then executed inside that function, when specific value is ready.
 
 Note that a callback is also a closure because its is called inside a function and it has access to all variables inside that function.
 
@@ -49,7 +49,7 @@ console.log(x); //1 --> because asyncIncrement is an async function the value of
 
 ### How to create callback functions to fix [Example 9.0](callbackFunctions.md#example-90) ?
 
-Lets illustrate that dirrectly using an example
+Lets illustrate that directly using an example
 
 #### Example 9.1:
 
@@ -60,7 +60,7 @@ var x = 1;
 function asyncIncrement(callback){ //we added a parameter, which is a function that will be executed later
 	setTimeout(function(){
 		x = 2;
-		callback(x);
+		callback(x); // Here we execute the callback function because we got our update x value
 	},1000);
 }
 
@@ -71,7 +71,7 @@ asyncIncrement(function(incrementedValue){
 
 ```
 
-As you can see the value is printed correctly after 1 second, by following the following steps
+As you can see the value is printed correctly after 1 second, by the following steps
 
 1. Changed `asyncIncrement` function definition to accept 1 argument (the callback function)
 
