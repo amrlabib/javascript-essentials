@@ -7,7 +7,9 @@ Note that a callback is also a closure because its is called inside a function a
 
 ---
 
-### First class citizen functions make callbacks possible:
+### Why callback function is possible in javascript:
+
+The answer is that functions are First class citizen, which means the following:
 
 1. Function objects can be assigned to variables.
 
@@ -34,11 +36,11 @@ var x = 1;
 function asyncIncrement(){
 	setTimeout(function(){
 		x = 2;
-	},3000);
+	},1000);
 }
 
 asyncIncrement();
-console.log(x); //1 --> because asyncIncrement is an async function the value of x is incremented later after 3 seconds, and our console.log picked the old value.
+console.log(x); //1 --> because asyncIncrement is an async function the value of x is incremented later after 1 second, and our console.log picked the old value.
 
 ```
 
@@ -55,21 +57,88 @@ Lets illustrate that dirrectly using an example
 
 var x = 1;
 
-function asyncIncrement(callback){
+function asyncIncrement(callback){ //we added a parameter, which is a function that will be executed later
 	setTimeout(function(){
 		x = 2;
 		callback(x);
-	},3000);
+	},1000);
 }
 
 
 asyncIncrement(function(incrementedValue){
-	console.log(incrementedValue); //2 --> because we used callback function to capture the value when it is ready after 3 seconds
+	console.log(incrementedValue); //2 --> because we used callback function to capture the value when it is ready after 1 second
 });
 
 ```
 
-As you can see the value is printed correctly after 3 seconds
+As you can see the value is printed correctly after 1 second, by following the following steps
+
+1. Changed `asyncIncrement` function definition to accept 1 argument (the callback function)
+
+2. While executing `asyncIncrement` we passed an anonymous function with 1 argument, and its implementation.
+
+3. After 1 second we execute the callback function and pass the incremented value of `x`.
+
+---
+
+### Callback function context:
+
+usually callback function is executed with incorrect `this` value, as we learned from [Context section](context.md) we can use `bind` , `apply` , or `call` to pass the desired `this` value.
+
+#### Example 9.2:
+
+In this example we will not pass the value of `x` as parameter to callback function, instead we will use the context value `this` of the object to access `x` value correctly.
+
+```javascript
+
+var obj = {
+	x : 1,
+	asyncIncrement : function(callback){
+		setTimeout(function(){
+		    this.x += 1;  //in this line `this` value is bound to global window object, not the current object, thats why the result of this.x is undefined and undefined += 1 is NaN
+			callback();
+		}, 1000);
+	}
+};
+
+
+obj.asyncIncrement(function(){
+	console.log(this.x); //NaN
+});
+
+```
+
+As we can see from the previous example we have incorrect `this` context, inside 2 callback functions
+
+1. The callback function of `setTimeout`.
+
+2. The callback function of our own `asyncIncrement` function.
+
+
+#### Example 9.3:
+
+In this example we will see how `bind`, `call` and `apply` are useful to give us the correct `this` context to our previous [example](callbackFunction.md#example-92)
+
+```javascript
+
+var obj = {
+	x : 1,
+	asyncIncrement : function(callback){
+		setTimeout(function(){
+		    this.x += 1;
+			callback.apply(this);  // notice how we called the callback function using apply to pass the correct `this` context 
+		}.bind(this), 1000); // notice how we bound the anonymous callback function of setTimeout using bind(this)
+	}
+};
+
+
+obj.asyncIncrement(function(){
+	console.log(this.x); //2  --> because `this` context now is bound correctly to obj
+});
+
+
+```
+
 
 
 
