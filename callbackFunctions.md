@@ -139,6 +139,68 @@ obj.asyncIncrement(function(){
 
 ```
 
+---
+
+## Callback Hell, or thats how they call it!:
+
+Callback function is very powerful but in large scale applications where multiple nested asynchronous results are expected, will result in too many nested callback functions, this is what is known by callback hell.
+
+### Example 9.4:
+
+In this example we will see how 3 nested callback function will look like
+
+```javascript
+
+var x = 1;
+
+function asyncIncrementOne(callback){
+	setTimeout(function(){
+		x += 1;
+		callback(x);
+	},1000);
+}
+
+function asyncIncrementTwo(callback){
+	setTimeout(function(){
+		x += 2;
+		callback(x);
+	},1000);
+}
+
+function asyncIncrementThree(callback){
+	setTimeout(function(){
+		x += 3;
+		callback(x);
+	},1000);
+}
+
+
+function asyncIncrement(){
+	asyncIncrementOne(function(oneIncrement){
+		console.log(oneIncrement);
+		asyncIncrementTwo(function(twoIncrement){
+			console.log(twoIncrement);
+			asyncIncrementThree(function(threeIncrement){
+				console.log(threeIncrement);
+			});
+		});
+	});
+}
+
+asyncIncrement();
+
+//result
+// 2
+// 4
+// 7
+
+```
+
+As we can see from this example three nested callback functions are really confusing in terms of code readability and tracking what is going where, we can reduce this by defining each callback function separately and then call it, but still the code will be a bit confusing.
+
+Fortunately we have a much better solution in javascript which is [promises](promises.md)
+
+
 
 
 
