@@ -162,7 +162,7 @@ Module.logNum(); //TypeError Module.logNum is not a function --> becaise logNum 
 
 #### Example 5.4:
 
-Save state with IIFE and closure, this is a copy from example 4.3 used in closures section but using IIFE instead of named function.
+Save state with IIFE and closure, this is a copy from [Example 4.3](closure.md#example-43) used in closures section but using IIFE instead of named function.
 
 Capture the value of `i` inside each loop.
 
