@@ -117,7 +117,7 @@ As we can see from the previous example we have incorrect `this` context, inside
 
 #### Example 9.3:
 
-In this example we will see how `bind`, `call` and `apply` are useful to give us the correct `this` context to our previous [example](callbackFunction.md#example-92)
+In this example we will see how `bind`, `call` and `apply` are useful to give us the correct `this` context to fix our previous [example](callbackFunction.md#example-92)
 
 ```javascript
 

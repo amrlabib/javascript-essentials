@@ -121,9 +121,9 @@ var y = 2;
 
 1. One of the common uses of IIFE is the module pattern (namespace) implemented as a singleton.
 
-2. Commonly used with closures.
+2. Commonly used with closures, to capture specific values in execution context.
 
-3. Generally any situation when you need to invoke an anonymous function once, without adding any variables.
+3. Generally any situation when you need to invoke an anonymous function once, without adding any variables to polute the global variables with one more variable!
 
 --- 
 

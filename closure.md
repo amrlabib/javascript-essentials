@@ -8,7 +8,7 @@ Notes about closures:
 #### Example 4.0:
 ```javascript
 var testClosure = function() {
-    var counter = 0; //counter is a private property
+    var counter = 1; //counter is a private property
     return function() {
         return counter += 1;
     }
@@ -18,7 +18,7 @@ var add = testClosure();
 
 add();
 add();
-console.log(add()); 3 --> because counter is incremented to 3 times
+console.log(add()); 4 --> because counter is incremented to 3 times
 ```
 
 #### Example 4.1:
@@ -28,7 +28,7 @@ Closure function has reference to variables in containing function, not a copy
 ```javascript
 
 var testClosure = function(){
-    var counter = 0;
+    var counter = 1;
     var printCounter = function(){
         console.log(counter);
     }
@@ -71,7 +71,7 @@ printValuesArr[9](); //10
 as we can see the example 4.1 the correct value of `i` is not captured because the value of `i` already changed by the time we called the function.
 
 #### Example 4.3:
-Capture the value of `i` inside each loop using closure (fix Example 4.1)
+Capture the value of `i` inside each loop using closure fix [Example 4.2](closure.md#example-42)
 
 ```javascript
 var printValuesArr = [];
