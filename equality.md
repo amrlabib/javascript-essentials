@@ -14,7 +14,7 @@ In javascript equality comparison can be done using `==` or `===`
 var x = 1;
 var y = "1";
 
-console.log(x == y) //true --> because type conversion is done and then values are compare
+console.log(x == y) //true --> because type conversion is done and then values are compared
 
 console.log( x === y ) //false  --> because types are different
 
