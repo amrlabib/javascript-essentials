@@ -2,9 +2,9 @@
 
 In javascript equality comparison can be done using `==` or `===`
 
-1. `==`:  operator will compare for equality after doing any necessary type conversions.
+1. Loose equality `==`:  operator will compare for equality after doing any necessary type conversions.
 
-2. `===`:  operator will not do the conversion, so if two values are not the same type === will simply return false, else compare for equality.
+2. Strict Equality `===`:  operator will not do the conversion, so if two values are not the same type === will simply return false, else compare for equality.
 
 
 #### Example 8.0:
