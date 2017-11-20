@@ -12,7 +12,7 @@ This repository will cover the following topics:
 7. [Mutability](mutability.md)
 8. [Equality](equality.md)
 9. [Callback Functions](callbackFunctions.md)
-10.[Promises](promises.md)
+10. [Promises](promises.md)
 
 ## Why this repository ?
 * This repository contains concise explanation and examples to some topics that are widely used in javascript.
