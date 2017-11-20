@@ -141,7 +141,7 @@ incrementValueOne()
 
 Sometimes we encouter a situation where we need to get a final value or execute specific function after a set of non related async operations are all done, this is when `Promise.all` will be useful.
 
-`Promise.all` will accept an array of Promise objects, and when all of them are fulfilled it will fire one `then` containing the result.
+`Promise.all` will accept an array of Promise objects, and when all of them are fulfilled it will fire one `then` containing the array of results.
 
 #### Example 10.2:
 
