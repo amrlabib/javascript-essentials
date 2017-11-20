@@ -27,7 +27,7 @@ In javascript variables can be scoped using functions.
 var globalName = "amr";
 
 function scopeFunction() {
-    globalMessage = "hello"; //undeclared variable initialization without using var keyword thats why its a global variable.
+    globalMessage = "hello"; //undeclared variable initialization without using var keyword thats why it's a global variable.
 
     var localName = "labib"; //Scoped by the current function
 
@@ -37,8 +37,8 @@ function scopeFunction() {
 scopeFunction();
 
 console.log(globalName);       //amr  ->  global variable, defined in the global scope
-console.log(globalMessage);    //hello -> global variable because its defined without using var keyword
-console.log(localName);        //undefined  -> local variable because its scoped by scopeFunction function
+console.log(globalMessage);    //hello -> global variable because it's defined without using var keyword
+console.log(localName);        //ReferenceError: localName is not defined  -> local variable because it's scoped by scopeFunction function
 ```
 
 **Hint**:
@@ -58,8 +58,8 @@ if (true) {
     var globalJob = "Software Engineer"; //block statement does not create new scope for variables
     let localTitle = "Mr"; //we can define local variables inside block statement using es6 let keyword
 }
-console.log(globalJob);  //Software Engineer -> global variable because its defined inside a block statement
-console.log(localTitle); //undefined ->  local variable defined with let inside block statement
+console.log(globalJob);  //Software Engineer -> global variable because it's defined inside a block statement
+console.log(localTitle); //ReferenceError: localTitle is not defined ->  local variable defined with let inside block statement
 ```
 
 ---

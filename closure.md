@@ -14,11 +14,11 @@ var testClosure = function() {
     }
 };
 
-var add = testClosure();
+var add = testClosure(); //this will return a function that if executed will increment counter
 
 add();
 add();
-console.log(add()); 4 --> because counter is incremented to 3 times
+console.log(add()); 4 --> because counter is incremented 3 times
 ```
 
 #### Example 4.1:

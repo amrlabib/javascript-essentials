@@ -2,6 +2,8 @@
 
 The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
 
+---
+
 ### Promise has 3 states:
 
 1. Pending: initial state, neither fulfilled nor rejected.
@@ -9,6 +11,8 @@ The Promise object represents the eventual completion (or failure) of an asynchr
 2. Fulfilled: meaning that the operation completed successfully.
 
 3. Rejected: meaning that the operation failed.
+
+---
 
 ### How to create a promise:
 
@@ -22,13 +26,13 @@ The Executer function will accept two functions as parameters:
 
 #### Example 10.0:
 
-We will follow the same examples used in callback, and see how they will work with promise
+We will follow the same examples used in callback, and see how they will work with promise, this is [Example 9.1](callbackFunctions.md#example-91) but using promise
 
 ```javascript
 
 var x = 1;
 
-function incrementValue(){
+function asyncIncrement(){
     return new Promise(function(resolve , reject){
         try{
             setTimeout(function(){ //to be able to reach reject change setTimeout to setTTimeour to result in an error and end inside catch and finally call reject
@@ -42,7 +46,7 @@ function incrementValue(){
     });
 }
 
-incrementValue()
+asyncIncrement()
 .then(function(incrementedValue){
     console.log(incrementedValue);
 })
@@ -58,7 +62,7 @@ incrementValue()
 
 ### Promise Chaining:
 
-Promise chaining is to return new promise in resolve function of previous promise, its very helpful in situation where multiple async operations needs to be executed sequentially 
+Promise chaining is to return new promise in resolve function of previous promise, it's very helpful in situation where multiple async operations needs to be executed sequentially 
 
 #### Example 10.1:
 

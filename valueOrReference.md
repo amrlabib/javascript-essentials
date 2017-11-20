@@ -39,7 +39,7 @@ Stack
 */
 
 
-x+=1;  // x is incremented, and since numbers are immutable type, the variables x will be assigned to a new object and will keep the old value as is because its immutable.
+x+=1;  // x is incremented, and since numbers are immutable type, the variables x will be assigned to a new object and will keep the old value as is because it's immutable.
 
 /*
 Stack
@@ -60,7 +60,7 @@ console.log(y); // 1 because y is still holding the old value.
 #### Example 2.1:
 Non Primitive data types actual values are saved in heap, while variables are saved in stack with the memory location in heap.
 
-Both `x` and `y` are holding memory locaion where the array is saved.
+Both `x` and `y` are holding memory location where the array is saved.
 
 
 ```javascript
@@ -173,7 +173,7 @@ function changeValues(primitive , nonPrimitive )
 
 changeValues(x , obj);
 
-console.log(x);     //1 --> didn't change because it immutable, value changed inside function created new memory location for it.
-console.log(obj);   //{name: "Amr", last: "Labib"} --> changed because its mutable non primitive and obj passed to function by reference and the changed value is changed in referenced location
+console.log(x);     //1 --> didn't change because it's immutable, value changed inside function created new memory location for it.
+console.log(obj);   //{name: "Amr", last: "Labib"} --> changed because it's mutable non primitive and obj passed to function by reference and the changed value is changed in referenced location
 ```
 

@@ -1,5 +1,5 @@
 # Hoisting
-Hoisting is the ability to use a variable or function before its declaration, its very important to understand that hoisting is applied to declaration not initialization.
+Hoisting is the ability to use a variable or function before its declaration, it's very important to understand that hoisting is applied to declaration not initialization.
 
 ### How and why javascript has hoisting:
 This is because in javascript variable declarations (and declarations in general) are processed before any code is executed, declaring a variable anywhere in the code is equivalent to declaring it at the top.
@@ -95,7 +95,7 @@ Tricky
 
 ```javascript
 console.log(x); //undefined
-console.log(y); //ReferenceError: y is not defined --> because y is undeclared variable
+console.log(y); //ReferenceError: y is not defined --> because y is undeclared variable and hoisting is applied to declaration not initialization
 var x = y = 10;
 ```
 
@@ -159,25 +159,10 @@ var expressionFunc = function(){
 ---
 
 ### Class hoisting:
-Class hoisting follow the same behaviour of function hoisting, class declaration is hoisting while expression is not.
+Class hoisting follow the same behaviour of function hoisting, class declaration is hoisted while expression is not.
 
 ---
 
 ### Side note:
 Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
-
----
-
-## Summary:
-1. Hoisting is using variables, or functions before declaring them.
-2. Hoisting is applied to declaration not initialization.
-3. hoisted variables are all initialized to `undefined`
-4. Hoisting is done per scope, in global scope variables are hoisted in global scope, while in local "function" scope variables are hoisted in local function scope.
-5. ES6 declaration using `let` and `const` will not be hoisted.
-
-
-
-
-
-
 

@@ -7,7 +7,7 @@
 ### All cases of this context:
 
 1. Global context:
-this is bound to global object when used globally.
+`this` is bound to global object when used globally.
 
 2. Function Context:
  * As Function: function is just called , `this` is bound to global `window` object.
@@ -58,7 +58,7 @@ These three methods can be used to change `this` context value inside any functi
 
 ---
 
-`bind `: creates a new function that, when called, has its this keyword set to the provided value, it also accept optional arguments that will be prepended to the argument list of the new returned function.
+`bind `: creates a new function that, when called, has its `this` keyword set to the provided value, it also accept optional arguments that will be prepended to the argument list of the new returned function.
 
 
 #### Example 6.2:
@@ -74,13 +74,13 @@ function printName(){
 	console.log(this.first +  " " + this.last , arguments[0] , arguments[1]);
 }
 
-printName(); // undefined undefined undefined undefined  --> because this is bound to global window object, also we don't have any argument passed to the function
+printName(); // undefined undefined undefined undefined  --> because `this` is bound to global window object, also we don't have any argument passed to the function
 
-var boundPrintName = printName.bind(obj); // will return a new function with this context bound to obj
+var boundPrintName = printName.bind(obj); // will return a new function with `this` bound to obj
 
 boundPrintName(); // Amr Labib undefined undefined
 
-var boundPrintNameWithArgument = printName.bind(obj , "argument 1"); //will return new function with this context bound to obj and first argument set to "argument 1"
+var boundPrintNameWithArgument = printName.bind(obj , "argument 1"); //will return new function with `this` bound to obj and first argument set to "argument 1"
 
 boundPrintNameWithArgument("argument 2"); //Amr Labib argument 1 argument 2
 
@@ -89,9 +89,9 @@ boundPrintNameWithArgument("argument 2"); //Amr Labib argument 1 argument 2
 ---
 
 
-`call`: calls a function with a given this value and arguments provided individually.
+`call`: calls a function with a given `this` value and arguments provided individually.
 
-`apply`: calls a function with a given this value, and arguments provided as an array
+`apply`: calls a function with a given `this` value, and arguments provided as an array
 
 #### Example 6.3:
 
@@ -100,21 +100,21 @@ Notice the difference between `call` and `apply` is just how they accept argumen
 ```javascript
 
 var obj= {
-	first: "Amr",
-	last: "Labib"
+  first: "Amr",
+  last: "Labib"
 }
 
 function printName(){
-	console.log(this.first +  " " + this.last , arguments[0] , arguments[1] );
+  console.log(this.first +  " " + this.last , arguments[0] , arguments[1] );
 }
 
 printName(); // undefined undefined undefined undefined  --> because this is bound to global window object, also we don't have any argument passed to the function
 
 printName.call(obj); // Amr Labib undefined undefined
-printName.call(obj , "argument 1" , "argument 2"); //Amr Labib argument 1 argument 2
+printName.call(obj , "argument 1" , "argument 2");    //Amr Labib argument 1 argument 2
 
 printName.apply(obj); // Amr Labib undefined undefined
-printName.call(obj , ["argument 1" , "argument 2"]); //Amr Labib [argument 1 , argument 2] undefined
+printName.apply(obj , ["argument 1" , "argument 2"]); //Amr Labib argument 1 argument 2
 
 ```
 
@@ -131,14 +131,14 @@ var Name = function(){
 	this.last = "Labib";
 }
 
-var obj1 = new Name(); //this == Name Object 
+var obj1 = new Name(); //this == Name Object
 
 console.log(obj1.first);
 
 ```
 
 **Hint:**
-By Convention we use capitalize the first letter in function when we use it as constructor.
+By Convention we capitalize the first letter in function when we use it as constructor.
 
 ---
 

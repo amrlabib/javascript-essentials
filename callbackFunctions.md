@@ -1,15 +1,15 @@
 ## Callback Functions:
 
-A callback also known as Higher-order Functions is a function passed as a parameter to another function, then executed inside that function, when specific value is ready.
+A callback also known as Higher-order Functions is a function passed as a parameter to another function, then executed inside that function, when specific result is ready.
 
-Note that a callback is also a closure because its is called inside a function and it has access to all variables inside that function.
+Note that a callback is also a closure because it's called inside a function and it has access to all variables inside that function.
 
 
 ---
 
 ### Why callback function is possible in javascript:
 
-The answer is that functions are First class citizen, which means the following:
+The answer is that functions are First class citizen, which means:
 
 1. Function objects can be assigned to variables.
 
@@ -25,6 +25,8 @@ The answer is that functions are First class citizen, which means the following:
 Callback function is very powerful when it comes to capturing asynchronous operations results.
 
 
+**Note**: We will use `setTimeout` to simulate an async operation.
+
 #### Example 9.0:
 
 Async example where the callback function will be needed
@@ -35,7 +37,7 @@ var x = 1;
 
 function asyncIncrement(){
 	setTimeout(function(){
-		x = 2;
+		x += 1;
 	},1000);
 }
 
@@ -59,8 +61,8 @@ var x = 1;
 
 function asyncIncrement(callback){ //we added a parameter, which is a function that will be executed later
 	setTimeout(function(){
-		x = 2;
-		callback(x); // Here we execute the callback function because we got our update x value
+		x += 1;
+		callback(x); // Here we execute the callback function because we got our incremented x value
 	},1000);
 }
 

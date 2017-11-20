@@ -103,13 +103,13 @@ console.log(x == y); //true --> because arrays are mutable and pushing number 5 
 
 ```
 
-**Aside:** React is an example for a library that really care about mutability, because ok its architecture the way it depened mainly on `state` and `props` comparison to decide when to render components, thats why its really popular statement that you should never mutate `state` or `props` instead creating new object to make it clear for react that the state actually changed.
+**Aside:** React is an example for a library that really care about mutability, because ok its architecture the way it depened mainly on `state` and `props` comparison to decide when to render components, thats why it's really popular statement that you should never mutate `state` or `props` instead creating new object to make it clear for react that the state actually changed.
 
 ---
 
 ### Avoid mutable data types comparison issue by making copy instead of reference
 
-1. `Objects` : we can make a deep copy of objects using `JSON.parse(JSON.stringify(obj));`, or Object.freeze(obj) that will not allow property changes in object.
+1. `Objects` : we can make a deep copy of objects using `JSON.parse(JSON.stringify(obj));`, or `Object.freeze(obj)` that will not allow property changes in object.
 
 2. `Array` : we can use multiple ways to clone an array like loop, `slice`, and `concat`
 
