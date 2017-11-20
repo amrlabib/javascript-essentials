@@ -15,12 +15,12 @@ This repository will cover the following topics:
 10. [Promises](promises.md)
 
 ## Why this repository ?
-* This repository contains concise explanation and examples to some topics that are widely used in javascript.
+* This repository contains concise explanation and examples to some important topics in javascript.
 
 
 ## What is included:
 For each javascript topic we have:
-* `topic.md`: includes topic explanation with numbers examples.
+* `topic.md`: includes topic explanation with numbered examples.
 
 * All examples are written in pure javascript.
 
