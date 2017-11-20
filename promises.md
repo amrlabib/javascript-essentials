@@ -137,7 +137,7 @@ incrementValueOne()
 
 ---
 
-## `Promise.all`:
+### `Promise.all`:
 
 Sometimes we encouter a situation where we need to get a final value or execute specific function after a set of non related async operations are all done, this is when `Promise.all` will be useful.
 
