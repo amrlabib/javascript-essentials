@@ -141,5 +141,75 @@ incrementValueOne()
 
 Sometimes we encouter a situation where we need to get a final value or execute specific function after a set of non related async operations are all done, this is when `Promise.all` will be useful.
 
-`Promise.all` will accept an array of Pr
+`Promise.all` will accept an array of Promise objects, and when all of them are fulfilled it will fire one `then` containing the result.
+
+#### Example 10.1:
+
+We will get the result of our three async functions inside one `.then` function.
+
+```javascript
+
+var x = 1;
+
+
+function asyncIncrementOne(){
+
+    return new Promise(function(resolve , reject){
+        try{
+            setTimeout(function(){
+                x+=1;
+                resolve(x);
+            },1000);   
+        }
+        catch(error){
+            reject(error);
+        }
+    });
+}
+
+
+function asyncIncrementTwo(){
+    return new Promise(function(resolve , reject){
+        try{
+            setTimeout(function(){
+                x+=2;
+                resolve(x);
+            },1000);   
+        }
+        catch(error){
+            reject(error);
+        }
+    });
+}
+
+function asyncIncrementThree(){
+    return new Promise(function(resolve , reject){
+        try{
+            setTimeout(function(){
+                x+=3;
+                resolve(x);
+            },1000);   
+        }
+        catch(error){
+            reject(error);
+        }
+    });
+}
+
+Promise.all([asyncIncrementOne() , asyncIncrementTwo() , asyncIncrementThree()])
+.then(function(results){
+    console.log(results[0]);
+    console.log(results[1]);
+    console.log(results[2]);
+})
+.catch(function(error){
+    console.log(error);
+});
+
+//result
+//2
+//4
+//7
+
+```
 
