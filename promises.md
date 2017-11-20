@@ -143,7 +143,7 @@ Sometimes we encouter a situation where we need to get a final value or execute 
 
 `Promise.all` will accept an array of Promise objects, and when all of them are fulfilled it will fire one `then` containing the result.
 
-#### Example 10.1:
+#### Example 10.2:
 
 We will get the result of our three async functions inside one `.then` function.
 
