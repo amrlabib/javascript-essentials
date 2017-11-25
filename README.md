@@ -1,5 +1,9 @@
 # Javascript Essentials, How and Why
 
+## Why this repository ?
+* This repository contains concise explanation and examples to some important topics in javascript.
+
+
 ## Topics:
 This repository will cover the following topics:
 
@@ -13,10 +17,6 @@ This repository will cover the following topics:
 8. [Equality](equality.md)
 9. [Callback Functions](callbackFunctions.md)
 10. [Promises](promises.md)
-
-## Why this repository ?
-* This repository contains concise explanation and examples to some important topics in javascript.
-
 
 ## What is included:
 For each javascript topic we have:

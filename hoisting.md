@@ -33,7 +33,7 @@ Variables are hoisted in it's own execution scope, a local scope declared variab
 
 ### Variable hoisting:
 
-#### Example 3.0;
+#### Example 3.0:
 
 Variables can be used before its declaration.
 
