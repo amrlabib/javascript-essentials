@@ -17,6 +17,7 @@ This repository will cover the following topics:
 8. [Equality](equality.md)
 9. [Callback Functions](callbackFunctions.md)
 10. [Promises](promises.md)
+11. [Async/Await](async-await.md)
 
 ## What is included:
 For each javascript topic we have:
