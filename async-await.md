@@ -36,7 +36,7 @@ Aync/Await is not a replacement for Promise, its actually using promise.
 
 ### Hint:
 
-Anything that can be done by async/await can be done using only Promises, to show how it works we will have 2 examples where 
+Anything that can be done by async/await can be done using only Promises, to show how it works we will have 2 examples where we will see the same result first using Promises, and then using async/await
 
 ---
 
