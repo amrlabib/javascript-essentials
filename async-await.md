@@ -26,7 +26,7 @@ Aync/Await is not a replacement for Promise, its actually using promise.
 
 1. `await` is used to pause the execution of a function.
 
-2. We use `await` before calling a Promise to the rest of code execution until that promise is resolved.
+2. We use `await` before calling a Promise to pause the rest of code execution until that promise is resolved.
 
 3. `await` works only with Promises, it does not work with callback functions
 
@@ -91,7 +91,7 @@ function getAsyncData(){
 
 //Handle asynchronous call using async/await 
 //As you can see using async while declaring a function will convert it to promise
-//Also using await will pause the function execution until the Promise getAsyncData us resolved
+//Also using await will pause the function execution until the Promise getAsyncData is resolved
 async function getData(){
 	var data = await getAsyncData();
 	return data;
@@ -141,7 +141,7 @@ getData()
 });
 ```
 
-As we can see from the result the values 3 is returned after 6 seconds because getAsyncData is called 3 times sequentially, num2 will wait 2 seconds until num1 is returned and num3 will wait 4 seconds until num1 and num2 are both returned.
+As we can see from the result the value 3 is returned after 6 seconds because getAsyncData is called 3 times sequentially, num2 will wait 2 seconds until num1 is returned and num3 will wait 4 seconds until num1 and num2 are both returned.
 
 This is a performance issue because num1, num2, and num3 are all not related to each other which means we don't need to wait until num1 or num2 are returned to start execution of num3.
 
@@ -184,7 +184,7 @@ This is a more optimized code for example 11.2 as the result 3 will be printed a
 
 ### Hint:
 
-The above unrelated async calls can be acheived easily using `Promise.all([getAsyncData , getAsyncData , getAsyncData])`
+The above unrelated async calls can be acheived easily with Promises using `Promise.all([getAsyncData , getAsyncData , getAsyncData])`
 
 
 
