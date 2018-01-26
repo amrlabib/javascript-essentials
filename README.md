@@ -69,3 +69,5 @@ https://davidwalsh.name/promises
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 https://tutorialzine.com/2017/07/javascript-async-await-explained
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
