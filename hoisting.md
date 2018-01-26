@@ -159,7 +159,7 @@ var expressionFunc = function(){
 ---
 
 ### Class hoisting:
-An important difference between function declarations and class declarations is that function declarations are hoisted and class declarations are not.
+An important difference between function declarations and class declarations is that function declarations are hoisted and class declarations are not, generally class declarations and expressions are not hoisted.
 
 ---
 
