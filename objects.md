@@ -156,9 +156,7 @@ Calculator.sum = function(num1 , num2){
 	return num1 + num2;
 }
 
-
 var calc1 = new Calculator();
-
 
 console.log(Calculator.sum(1,2)); //3 ---> we can call sum directly on Calculator class
 console.log(calc1.sum(1,2)); //Uncaught TypeError: calc1.sum is not a function ---> because sum is a static function.
