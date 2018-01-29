@@ -19,6 +19,7 @@ This repository will cover the following topics:
 9. [Callback Functions](callbackFunctions.md)
 10. [Promises](promises.md)
 11. [Async/Await](async-await.md)
+12. [Objects](objects.md)
 
 ---
 
@@ -71,3 +72,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://tutorialzine.com/2017/07/javascript-async-await-explained
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+https://stackoverflow.com/questions/4736910/javascript-when-to-use-prototypes
