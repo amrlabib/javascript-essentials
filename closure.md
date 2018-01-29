@@ -68,7 +68,7 @@ printValuesArr[5](); //10
 printValuesArr[9](); //10
 ```
 
-as we can see the example 4.1 the correct value of `i` is not captured because the value of `i` already changed by the time we called the function.
+as we can see in example 4.2 the correct value of `i` is not captured because the value of `i` already changed by the time we called the function in that index.
 
 #### Example 4.3:
 Capture the value of `i` inside each loop using closure fix [Example 4.2](closure.md#example-42)
