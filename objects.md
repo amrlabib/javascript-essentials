@@ -12,7 +12,7 @@ I believe that the above 2 ways can be used to cover any use case for creating a
 
 ### Object literal
 
-We used object literal object, when we have a a simple object with key-value pairs and we don't need to have multiple instance of that Object, in another word with singleton pattern.
+We used object literal object, when we have a a simple object with key-value pairs and we don't need to have multiple instances of that Object, in another word with singleton pattern.
 
 #### Example 12.0:
 
@@ -37,7 +37,7 @@ person.printName(); //Amr Labib
 ### using `new` keyword:
 
 We use `new` keyword when we start working with javascript in an OOP (Object Oriented Programming) way.
-So to make use of Class instances creation, constructors, inheritance and static functions we need to create our object using `new` keyword
+So to make use of Class multiple instances creation, constructors, inheritance and static functions we need to create our object using `new` keyword
 
 
 #### Example 12.1:
@@ -119,7 +119,7 @@ Now we have a very important question, why can't we just define `printName` meth
 
 ---
 
-### `prototype` note:
+### `prototype` notes:
 
 1. `prototype` is set automatically when we create an object instance using `new` keyword
 
@@ -141,7 +141,7 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 ### Static method
 
-We usually create static methods when we need to add a utility function to a class, that can be called on any arguments, example `Math.abs(-2)` will return `2`
+We usually create static methods when we need to add a utility function to a class, that can be called with any arguments, example `Math.abs(-2)` will return `2`
 
 
 #### Example 12.3
@@ -165,5 +165,5 @@ console.log(calc1.sum(1,2)); //Uncaught TypeError: calc1.sum is not a function -
 
 ```
 
-As we can see in this example we can call `sum` method without creating an instance of Calculator class, also if we tried to access `sum` method from an instance it will return an error.
+As we can see in this example we can call `sum` method without creating an instance of Calculator class, also if we tried to access `sum` method from an instance it will return an error because its a static method.
 
