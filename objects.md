@@ -1,6 +1,6 @@
 ## Objects
 
-In javascript we can create an object using multiple ways, we will mentioned the most 2 common and used ways
+In javascript we can create an object using multiple ways, we will mention the most 2 common and used ways
 
 1. Object literal : `var obj = { first : "Amr" , last : "Labib" }`
 
