@@ -12,7 +12,7 @@ I believe that the above 2 ways can be used to cover any use case for creating a
 
 ### Object literal
 
-We used object literal object, when we have a a simple object with key-value pairs and we don't need to have multiple instances of that Object, in another word with singleton pattern.
+We use object literal, when we have a simple object with key-value pairs and we don't need to have multiple instances of that Object, in another word with singleton pattern.
 
 #### Example 12.0:
 
@@ -34,7 +34,7 @@ person.printName(); //Amr Labib
 
 ---
 
-### using `new` keyword:
+### Using `new` keyword:
 
 We use `new` keyword when we start working with javascript in an OOP (Object Oriented Programming) way.
 So to make use of Class multiple instances creation, constructors, inheritance and static functions we need to create our object using `new` keyword
@@ -61,7 +61,7 @@ console.log(person1.job); //Software Engineer
 person1.printName(); //Amr Labib
 
 console.log(person2.job); //Software Engineer
-person2.printName(); //Amr Labib
+person2.printName(); //John Adam
 
 ```
 
@@ -139,7 +139,7 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 ---
 
-### Static method
+### Static methods
 
 We usually create static methods when we need to add a utility function to a class, that can be called with any arguments, example `Math.abs(-2)` will return `2`
 
