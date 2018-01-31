@@ -37,6 +37,7 @@ person.printName(); //Amr Labib
 ### Using `new` keyword:
 
 We use `new` keyword when we start working with javascript in an OOP (Object Oriented Programming) way.
+
 So to make use of Class multiple instances creation, constructors, inheritance and static functions we need to create our object using `new` keyword
 
 ### The following will happen when you call a function with `new` keyword
@@ -62,7 +63,7 @@ function Person(firstName , lastName , job){
 	}
 }
 
-//create an instance of Person class using new keyword with its constructor function
+//create 2 instances of Person class using new keyword with its constructor function
 var person1 = new Person("Amr" , "Labib" , "Software Engineer");
 var person2 = new Person("John" , "Adam" , "Doctor");
 
@@ -102,6 +103,7 @@ function Person(firstName){
 	this.firstName = firstName;
 }
 
+//Here we define a new method called printName that will be shared by all instances created from Person class
 Person.prototype.printName = function(){
 	console.log(this.firstName);
 }
@@ -109,6 +111,7 @@ Person.prototype.printName = function(){
 var person1 = new Person("Amr");
 var person2 = new Person("John");
 
+//Both instances share the same method printName
 person1.printName(); //Amr
 person2.printName(); //John
 
@@ -126,13 +129,13 @@ Javascript will check first if the current object instance has a property called
 
 ### Why to use Object `prototype` ?
 
-Now we have a very important question, why can't we just define `printName` method inside Person class ?
+Now we have a very important question, why can't we just define `printName` method inside Person class as a class property like `firstName` ?
 
 * We can do that, but using `prototype` will give us a better memory performance, as we are not creating the function `printName` with each `Person` instance instead we have a single `printName` function that is shared by all created instances `person1` and `person2`.
 
 ---
 
-### `prototype` notes:
+### `prototype` object notes:
 
 1. `prototype` is set automatically when we create an object instance using `new` keyword
 
@@ -156,7 +159,7 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 In the previous examples we learned how we use object `prototype` to make multiple instances share a specific method, and how this is good interms of performance.
 
-Now we will see how to make Object inheritance, where we can have a subclass that inherit all properties and methods from a base class.
+Now we will see how to make Object inheritance, where we can have a subclass that inherit all properties and methods from a base class using `prototype`
 
 #### Example 12.3
 
@@ -175,7 +178,7 @@ Person.prototype.printName = function(){
 //Subclass Engineer
 function Engineer(firstName , lastName , job) {
 	//This line is responsible to adjust this context for inheritance
-	//Remember calling a function using call will make sure that the function context is changed to whatever object is passed.
+	//Remember calling a function using call will make sure that the function this context is changed to whatever object is passed in the first argument.
 	//Here we call Person constructor we Engineer this context
 	Person.call(this, firstName , lastName);
 
