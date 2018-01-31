@@ -85,7 +85,7 @@ When we define a constructor function as in the previous example, by convention 
 
 Every javascript object created using `new` keyword will contain an object called `prototype`.
 
-we usually use object `prototype` for: 
+We usually use object `prototype` for: 
 
 1. Properties sharing between multiple instances of the same class
 
@@ -147,11 +147,11 @@ Now we have a very important question, why can't we just define `printName` meth
 
 ### Difference between `prototype` and `__proto__`
 
-* `__proto__` is associated with objects instances `person1.__proto__.printName()` is valid while `Person.__proto__` is `undefined`
-
 * `prototype` is associated with Objects `Person.prototype.printName()` is valid while `person1.prototype` is `undefined`
 
-In few words `__proto__` is created from `prototype` and we should never change `__proto__`
+* `__proto__` is associated with objects instances `person1.__proto__.printName()` is valid while `Person.__proto__` is `undefined`
+
+In few words `__proto__` is created from `prototype` and we should never change the value of `__proto__`
 
 ---
 
@@ -165,31 +165,33 @@ Now we will see how to make Object inheritance, where we can have a subclass tha
 
 ```javascript
 
+
 //Base class Person
 function Person (firstName , lastName){
 	this.firstName = firstName;
 	this.lastName = lastName;
 }
 
+//printName method is defined in base class prototype
 Person.prototype.printName = function(){
 	console.log(this.firstName + " " + this.lastName);
 }
 
 //Subclass Engineer
 function Engineer(firstName , lastName , job) {
-	//This line is responsible to adjust this context for inheritance
-	//Remember calling a function using call will make sure that the function this context is changed to whatever object is passed in the first argument.
-	//Here we call Person constructor we Engineer this context
+	//The line below is to adjust this context for inheritance
+	//Remember calling a function using call will make sure that the function `this` context is changed to whatever object is passed in the first argument.
+	//Here we call Person constructor with Engineer `this` context
 	Person.call(this, firstName , lastName);
 
 	this.job  = job;
 }
-//this line will make sure that Engineer prototype is referencing its base class Person prototype
+//This line will make sure that Engineer prototype is referencing its base class Person prototype
 Engineer.prototype = Object.create(Person.prototype);
 //We need this line because now constructor function of prototype object is set to Person constructor, so we need to change the reference back to Engineer constructor
 Engineer.prototype.constructor = Engineer;
 
-
+//printNameWithJob method is defined in sub class prototype only
 Engineer.prototype.printNameWithJob = function() {
 	console.log(this.firstName + " " + this.lastName + ", " + this.job)
 }
@@ -202,6 +204,7 @@ var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
 person1.printName(); //Amr Labib
 engineer.printName();//Amr Labib  ---> this method is inherited from base class Person
 engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is inherited from
+person1.printNameWithJob(); //Uncaught TypeError: person1.printNameWithJob is not a function --> because printNameWithJob is defined in subclass only
 
 ```
 
