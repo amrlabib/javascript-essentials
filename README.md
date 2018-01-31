@@ -19,7 +19,7 @@ This repository will cover the following topics:
 9. [Callback Functions](callbackFunctions.md)
 10. [Promises](promises.md)
 11. [Async/Await](async-await.md)
-12. [Objects](objects.md)
+12. [Classes-Objects](classes-objects.md)
 
 ---
 
