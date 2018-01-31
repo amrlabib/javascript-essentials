@@ -41,9 +41,9 @@ So to make use of Class multiple instances creation, constructors, inheritance a
 
 ### The following will happen when you call a function with `new` keyword
 
-1. A new object gets created (let's call it O);
-2. O gets linked to another object, called its prototype;
-3. The function's this value is set to refer to O;
+1. A new object gets created (let's call it O).
+2. O gets linked to another object, called its `prototype`.
+3. The function's `this` value is set to refer to O.
 4. The function implicitly returns O.
 
 
@@ -73,9 +73,7 @@ person2.printName(); //John Adam
 ```
 
 **Note:**
-When we define a function as a class constructor as in the previous example, by convention we capitalize the first letter in the function name.
-
-So constructor functions should start with capitalized letter.
+When we define a constructor function as in the previous example, by convention we capitalize the first letter in the function name, so constructor functions should start with capitalized letter.
 
 
 ---
@@ -146,12 +144,57 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 ---
 
+### Object inheritance
+
+In the previous examples we learned how we use object `prototype` to make multiple instances inherit or share a specific object method, and how this is good interms of performance.
+
+Now we will see how to make Objects inheritance.
+
+#### Example 12.3
+
+```javascript
+
+function Person (firstName , lastName){
+	this.firstName = firstName;
+	this.lastName = lastName;
+}
+
+Person.prototype.printName = function(){
+	console.log(this.firstName + " " + this.lastName);
+}
+
+function Engineer(firstName , lastName , job) {
+	Person.call(this, firstName , lastName);
+	this.job  = job;
+}
+//this line will make sure that Engineer will be created with base object prototype.
+Engineer.prototype = Object.create(Person.prototype);
+//We need this line because now constructor function of prototype object is set to Person constructor, so we need to change the reference back to Engineer constructor
+Engineer.prototype.constructor = Engineer;
+
+//In case we want to override printName method to append job we can do that in the following way
+Engineer.prototype.printName = function(){
+	console.log(this.firstName + " " + this.lastName + ", " + this.job)
+}
+
+
+var person1 = new Person("Amr" , "Labib");
+var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
+
+
+person1.printName(); //Amr Labib
+engineer.printName();//Amr Labib  ---> this method is inherited from Person
+
+```
+
+---
+
 ### Static methods
 
 We usually create static methods when we need to add a utility function to a class, that can be called with any arguments, example `Math.abs(-2)` will return `2`
 
 
-#### Example 12.3
+#### Example 12.4
 
 ```javascript
 
@@ -172,3 +215,4 @@ console.log(calc1.sum(1,2)); //Uncaught TypeError: calc1.sum is not a function -
 
 As we can see in this example we can call `sum` method without creating an instance of Calculator class, also if we tried to access `sum` method from an instance it will return an error because its a static method.
 
+---
