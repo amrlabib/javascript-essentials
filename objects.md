@@ -1,4 +1,4 @@
-## Objects
+## Classes / Objects
 
 In javascript we can create an object using multiple ways, we will mention the most 2 common and used ways
 
@@ -52,6 +52,7 @@ So to make use of Class multiple instances creation, constructors, inheritance a
 
 ```javascript
 
+//This is called constructor function, basically this is the class constructor
 function Person(firstName , lastName , job){
 	this.firstName = firstName;
 	this.lastName = lastName;
@@ -61,6 +62,7 @@ function Person(firstName , lastName , job){
 	}
 }
 
+//create an instance of Person class using new keyword with its constructor function
 var person1 = new Person("Amr" , "Labib" , "Software Engineer");
 var person2 = new Person("John" , "Adam" , "Doctor");
 
@@ -82,11 +84,17 @@ When we define a constructor function as in the previous example, by convention 
 
 Every javascript object created using `new` keyword will contain an object called `prototype`.
 
-we usually use object `prototype` for properties inheritance.
+we usually use object `prototype` for: 
+
+1. Properties sharing between multiple instances of the same class
+
+2. Inheritance between classes/objects.
+
+---
 
 #### Example 12.2:
 
-In this example we will see how we can use object `prototypes` to inherit `printName` method.
+In this example we will see how we can use object `prototypes` to share `printName` method.
 
 ```javascript
 
@@ -144,16 +152,17 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 ---
 
-### Object inheritance
+### Object inheritance using `prototype`
 
-In the previous examples we learned how we use object `prototype` to make multiple instances inherit or share a specific object method, and how this is good interms of performance.
+In the previous examples we learned how we use object `prototype` to make multiple instances share a specific method, and how this is good interms of performance.
 
-Now we will see how to make Objects inheritance.
+Now we will see how to make Object inheritance, where we can have a subclass that inherit all properties and methods from a base class.
 
 #### Example 12.3
 
 ```javascript
 
+//Base class Person
 function Person (firstName , lastName){
 	this.firstName = firstName;
 	this.lastName = lastName;
@@ -163,17 +172,22 @@ Person.prototype.printName = function(){
 	console.log(this.firstName + " " + this.lastName);
 }
 
+//Subclass Engineer
 function Engineer(firstName , lastName , job) {
+	//This line is responsible to adjust this context for inheritance
+	//Remember calling a function using call will make sure that the function context is changed to whatever object is passed.
+	//Here we call Person constructor we Engineer this context
 	Person.call(this, firstName , lastName);
+
 	this.job  = job;
 }
-//this line will make sure that Engineer will be created with base object prototype.
+//this line will make sure that Engineer prototype is referencing its base class Person prototype
 Engineer.prototype = Object.create(Person.prototype);
 //We need this line because now constructor function of prototype object is set to Person constructor, so we need to change the reference back to Engineer constructor
 Engineer.prototype.constructor = Engineer;
 
-//In case we want to override printName method to append job we can do that in the following way
-Engineer.prototype.printName = function(){
+
+Engineer.prototype.printNameWithJob = function() {
 	console.log(this.firstName + " " + this.lastName + ", " + this.job)
 }
 
@@ -183,13 +197,14 @@ var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
 
 
 person1.printName(); //Amr Labib
-engineer.printName();//Amr Labib  ---> this method is inherited from Person
+engineer.printName();//Amr Labib  ---> this method is inherited from base class Person
+engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is inherited from
 
 ```
 
 ---
 
-### Static methods
+### Class static methods
 
 We usually create static methods when we need to add a utility function to a class, that can be called with any arguments, example `Math.abs(-2)` will return `2`
 
