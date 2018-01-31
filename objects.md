@@ -39,6 +39,13 @@ person.printName(); //Amr Labib
 We use `new` keyword when we start working with javascript in an OOP (Object Oriented Programming) way.
 So to make use of Class multiple instances creation, constructors, inheritance and static functions we need to create our object using `new` keyword
 
+### The following will happen when you call a function with `new` keyword
+
+1. A new object gets created (let's call it O);
+2. O gets linked to another object, called its prototype;
+3. The function's this value is set to refer to O;
+4. The function implicitly returns O.
+
 
 #### Example 12.1:
 

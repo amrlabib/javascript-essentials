@@ -74,3 +74,5 @@ https://tutorialzine.com/2017/07/javascript-async-await-explained
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 https://stackoverflow.com/questions/4736910/javascript-when-to-use-prototypes
+
+https://scotch.io/tutorials/better-javascript-with-es6-pt-ii-a-deep-dive-into-classes#toc-creating-subclasses-with-extends-calling-with-super
