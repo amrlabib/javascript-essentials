@@ -20,6 +20,7 @@ This repository will cover the following topics:
 10. [Promises](promises.md)
 11. [Async/Await](async-await.md)
 12. [Classes-Objects](classes-objects.md)
+13. [ES6-classes](ES6-classes.md)
 
 ---
 
