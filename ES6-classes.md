@@ -50,8 +50,9 @@ var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
 
 person1.printName(); //Amr Labib
 engineer.printName();//Amr Labib  ---> this method is inherited from base class Person
-engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is inherited from
+engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is defined in Engineer class
 Person.sayHi("Amr" , "Labib")// Hi Amr Labib ----> this is a static utility function defined in Person class
+Engineer.sayHi("Amr 2" , "Labib")//Hi Amr 2 Labib ---> this is a static utility function defined in Person class and inherited in Engineer class
 
 person1.sayHi()// Uncaught TypeError: person1.sayHi is not a function ----> because sayHi is a static function and can't be called by a class instance instead it needs to be called on Class directly.
 person1.printNameWithJob(); //Uncaught TypeError: person1.printNameWithJob is not a function --> because printNameWithJob is defined in subclass only

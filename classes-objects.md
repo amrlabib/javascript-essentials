@@ -177,6 +177,10 @@ Person.prototype.printName = function(){
 	console.log(this.firstName + " " + this.lastName);
 }
 
+Person.sayHi = function(firstName , lastName){
+	console.log("Hi " + firstName + " " + lastName);
+}
+
 //Subclass Engineer
 function Engineer(firstName , lastName , job) {
 	//The line below is to adjust this context for inheritance
@@ -190,6 +194,8 @@ function Engineer(firstName , lastName , job) {
 Engineer.prototype = Object.create(Person.prototype);
 //We need this line because now constructor function of prototype object is set to Person constructor, so we need to change the reference back to Engineer constructor
 Engineer.prototype.constructor = Engineer;
+//We need to use Object.assign to copy the values of all enumerable own properties from Person to Engineer, this will make sure that static methods like sayHi is inherited by Engineer
+Object.assign(Engineer , Person);
 
 //printNameWithJob method is defined in subclass prototype only
 Engineer.prototype.printNameWithJob = function() {
@@ -204,6 +210,10 @@ var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
 person1.printName(); //Amr Labib
 engineer.printName();//Amr Labib  ---> this method is inherited from base class Person
 engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is defined in subclass only
+
+
+Person.sayHi("Amr" , "Labib");
+Engineer.sayHi("Amr" , "Labib");
 person1.printNameWithJob(); //Uncaught TypeError: person1.printNameWithJob is not a function --> because printNameWithJob is defined in subclass only
 
 ```
