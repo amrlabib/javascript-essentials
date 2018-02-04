@@ -123,7 +123,7 @@ person2.printName(); //John
 
 From Example 12.2 we can see that we can call `printName` method on both instances `person1` and `person2`.
 
-Javascript will check first if the current object instance has a property called `printName` if its not found it will start looking for that property inside the Object prototype, this is called prototype chain
+Javascript will check first if the current object instance has a property called `printName` if it's not found it will start looking for that property inside the Object prototype, this is called prototype chain
 
 ---
 
@@ -234,6 +234,6 @@ console.log(calc1.sum(1,2)); //Uncaught TypeError: calc1.sum is not a function -
 
 ```
 
-As we can see in this example we can call `sum` method without creating an instance of Calculator class, also if we tried to access `sum` method from an instance it will return an error because its a static method.
+As we can see in this example we can call `sum` method without creating an instance of Calculator class, also if we tried to access `sum` method from an instance it will return an error because it's a static method.
 
 ---
