@@ -157,7 +157,7 @@ In few words `__proto__` is created from `prototype` and we should never change 
 
 ### Object inheritance using `prototype`
 
-In the previous examples we learned how we use object `prototype` to make multiple instances share a specific method, and how this is good interms of performance.
+In the previous example we learned how we use object `prototype` to make multiple instances share a specific method, and how this is good interms of performance.
 
 Now we will see how to make Object inheritance, where we can have a subclass that inherit all properties and methods from a base class using `prototype`
 
@@ -191,7 +191,7 @@ Engineer.prototype = Object.create(Person.prototype);
 //We need this line because now constructor function of prototype object is set to Person constructor, so we need to change the reference back to Engineer constructor
 Engineer.prototype.constructor = Engineer;
 
-//printNameWithJob method is defined in sub class prototype only
+//printNameWithJob method is defined in subclass prototype only
 Engineer.prototype.printNameWithJob = function() {
 	console.log(this.firstName + " " + this.lastName + ", " + this.job)
 }
@@ -203,7 +203,7 @@ var engineer = new Engineer("Amr" , "Labib" , "Software Engineer");
 
 person1.printName(); //Amr Labib
 engineer.printName();//Amr Labib  ---> this method is inherited from base class Person
-engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is inherited from
+engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is defined in subclass only
 person1.printNameWithJob(); //Uncaught TypeError: person1.printNameWithJob is not a function --> because printNameWithJob is defined in subclass only
 
 ```
