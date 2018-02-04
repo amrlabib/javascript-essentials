@@ -212,8 +212,8 @@ engineer.printName();//Amr Labib  ---> this method is inherited from base class 
 engineer.printNameWithJob();//Amr Labib, Software Engineer  ---> this method is defined in subclass only
 
 
-Person.sayHi("Amr" , "Labib");
-Engineer.sayHi("Amr" , "Labib");
+Person.sayHi("Amr" , "Labib");    //Hi Amr Labib --> static method 
+Engineer.sayHi("Amr" , "Labib");  //Hi Amr Labib --> static method inherited from Person
 person1.printNameWithJob(); //Uncaught TypeError: person1.printNameWithJob is not a function --> because printNameWithJob is defined in subclass only
 
 ```
