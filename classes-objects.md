@@ -70,7 +70,7 @@ var person2 = new Person("John" , "Adam" , "Doctor");
 console.log(person1.job); //Software Engineer
 person1.printName(); //Amr Labib
 
-console.log(person2.job); //Software Engineer
+console.log(person2.job); //Doctor
 person2.printName(); //John Adam
 
 ```
