@@ -184,7 +184,7 @@ This is a more optimized code for example 11.2 as the result 3 will be printed a
 
 ### try/catch:
 
-All the above examples are not utilizing `try/catch` blocks which is very important while using `await` if a promise is called with `await` and the promise got rejected to an exception will be thrown.
+All the above examples are not utilizing `try/catch` blocks which is very important while using `await` if a promise is called with `await` and the promise got rejected, an exception will be thrown.
 
 Whenever `await` is used it's important to use `try/catch` to be able to catch errors correctly.
 
