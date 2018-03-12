@@ -188,6 +188,7 @@ All the above examples are not utilizing `try/catch` blocks which is very import
 
 Whenever `await` is used it's important to use `try/catch` to be able to catch errors correctly.
 
+---
 
 ### Hint:
 
