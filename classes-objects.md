@@ -1,10 +1,12 @@
 ## Classes / Objects
 
-In javascript we can create an object using multiple ways, we will mention the most 2 common and used ways
+In javascript we can create an object using multiple ways, we will mention the most 3 common and used ways
 
 1. Object literal : `var obj = { first : "Amr" , last : "Labib" }`
 
 2. using `new` keyword:  `var obj = new MyObjContructor("Amr" , "Labib")`
+
+3. using `Object.create` this is commonly used to set the created Object prototype and properties
 
 I believe that the above 2 ways can be used to cover any use case for creating an object.
 
@@ -78,6 +80,28 @@ person2.printName(); //John Adam
 **Note:**
 When we define a constructor function as in the previous example, by convention we capitalize the first letter in the function name, so constructor functions should start with capitalized letter.
 
+---
+
+### using `Object.create`
+
+We use `Object.create` when we need to create an object with specific `prototype`
+
+
+```javascript
+var person = {
+  isHuman: false,
+  printDetails: function () {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+
+var me = Object.create(person);
+
+me.name = "Amr"; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+
+me.printDetails();
+```
 
 ---
 

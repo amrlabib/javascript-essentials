@@ -79,3 +79,5 @@ https://stackoverflow.com/questions/4736910/javascript-when-to-use-prototypes
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
 
 https://scotch.io/tutorials/better-javascript-with-es6-pt-ii-a-deep-dive-into-classes
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
