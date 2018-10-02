@@ -8,7 +8,7 @@ In javascript we can create an object using multiple ways, we will mention the m
 
 3. using `Object.create` this is commonly used to set the created Object prototype and properties
 
-I believe that the above 2 ways can be used to cover any use case for creating an object.
+I believe that the above 3 ways can be used to cover any use case for creating an object.
 
 ---
 
@@ -82,7 +82,7 @@ When we define a constructor function as in the previous example, by convention 
 
 ---
 
-### using `Object.create`
+### Using `Object.create`
 
 We use `Object.create` when we need to create an object with specific `prototype`
 
