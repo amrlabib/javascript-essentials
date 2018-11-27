@@ -21,6 +21,7 @@ This repository will cover the following topics:
 11. [Async/Await](async-await.md)
 12. [Classes-Objects](classes-objects.md)
 13. [ES6-classes](ES6-classes.md)
+14. [Memory](memory.md)
 
 ---
 
@@ -81,3 +82,5 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
 https://scotch.io/tutorials/better-javascript-with-es6-pt-ii-a-deep-dive-into-classes
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
