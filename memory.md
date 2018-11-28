@@ -87,3 +87,72 @@ innerObjNewRef = 1;
 ```
 
 ### Limitation: cycles
+
+There is a limitation when it comes to cycles. In the following example, two objects are created and reference one another, thus creating a cycle. They will go out of scope after the function call, so they are effectively useless and could be freed. However, the reference-counting algorithm considers that since each of the two objects is referenced at least once, neither can be garbage-collected.
+
+#### Example 14.2:
+
+```javascript
+function f() {
+  var obj = {};
+  var obj2 = {};
+  obj.a = obj2; // obj references obj2
+  obj2.a = obj; // obj2 references obj
+}
+f();
+```
+
+### Mark and Sweep algorithm
+
+This algorithm reduces the definition of `an object is not needed anymore` to `an object is unreachable`, this will fix cycles limitation.
+
+This algorithm assumes the knowledge of a set of objects called roots (In JavaScript, the root is the global object). Periodically, the garbage-collector will start from these roots, find all objects that are referenced from these roots, then all objects referenced from these, etc. Starting from the roots, the garbage collector will thus find all reachable objects and collect all non-reachable objects, this is the used algorithm in all modern browsers.
+
+---
+
+## Memory Leaks in javascript:
+
+Memory leak happens when an allocated memory is not needed anymore, but the garbage collector was not able to determine that it is not needed as a result it will not be garbage collected.
+
+Common memory leak mistakes
+
+1. Global Variables.
+2. Timers or callbacks that are forgotten.
+3. Closures.
+4. Out of DOM references.
+
+---
+
+## 1. Global variables:
+
+In javascript using an undeclared variable will create a new variable in global object, in browser it will be created under `window` object
+
+#### Example 14.3:
+
+In this example we will see how initializing a variable without declaring it can cause an unintended leak.
+
+```javascript
+function temp() {
+  tempVar = 1; // this is equivalent to window.tempVar = 1;
+}
+temp(); // function execution is done but tempVar is still saved in global object and will never be released! Leak!
+```
+
+We can avoid this by adding `use strict` at the beginning of our javascript file, this will switch to strict mode in javascript execution and prevent such unintended global variables creation.
+
+#### Example: 14.3:
+
+In this example we will see how incorrect usage of [`this`](context.md) can cause unintended global variables and as a result Leak.
+
+```javascript
+function temp() {
+  this.tempVar = 1;
+}
+
+temp(); // now `this` value inside temp function is equal to global window object, which will result in
+// creating tempVar inside global window object. Leak!
+```
+
+---
+
+## 2. Timers or callbacks that are forgotten

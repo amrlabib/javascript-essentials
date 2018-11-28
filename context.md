@@ -1,7 +1,7 @@
 ## Context
 * Context is the value of `this` in each part of your code.
 
-* Function context depends on how the function is called, this is called the innvocation pattern.
+* Function context depends on how the function is called, this is called the invocation pattern.
 
 
 ### All cases of this context:
@@ -149,7 +149,7 @@ Use `call` with self invoked function to set `this` context inside each loop ite
 ```javascript
 var numbers = [{
   number : {
-  	value : 1 
+  	value : 1
   }
 },{
   number : {
@@ -169,4 +169,3 @@ for (var i = 0; i < numbers.length; i++) {
 
 
 ```
-
