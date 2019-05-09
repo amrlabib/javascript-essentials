@@ -167,5 +167,8 @@ for (var i = 0; i < numbers.length; i++) {
   }).call(numbers[i].number);
 }
 
+// {value: 1}
+// {value: 2}
+// {value: 3}
 
 ```
