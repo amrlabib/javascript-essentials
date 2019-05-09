@@ -16,7 +16,7 @@
 
 3. Special case functions like , `bind`,`call`,`apply` can change this context to any passed object.
 
-4. Construction of new Object: when we use new key word to construct a new object, this is bound to the new created object.
+4. Construction of new Object: when we use `new` key word to construct a new object, this is bound to the new created object.
 
 #### Example 6.0:
 
