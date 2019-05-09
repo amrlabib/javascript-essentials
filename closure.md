@@ -18,7 +18,7 @@ var add = testClosure(); //this will return a function that if executed will inc
 
 add();
 add();
-console.log(add()); 4 --> because counter is incremented 3 times
+console.log(add()); // 4 --> because counter is incremented 3 times
 ```
 
 #### Example 4.1:
