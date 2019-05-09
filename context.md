@@ -138,7 +138,7 @@ console.log(obj1.first);
 ```
 
 **Hint:**
-By Convention we capitalize the first letter in function when we use it as constructor.
+By Convention we capitalize the first letter in function when we use it as Object constructor.
 
 ---
 
