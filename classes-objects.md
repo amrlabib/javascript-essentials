@@ -100,7 +100,8 @@ var me = Object.create(person);
 me.name = "Amr"; // "name" is a property set on "me", but not on "person"
 me.isHuman = true; // inherited properties can be overwritten
 
-me.printDetails();
+me.printDetails(); // My name is Amr. Am I human? true
+person.printDetails(); // My name is undefined. Am I human? false
 ```
 
 ---
