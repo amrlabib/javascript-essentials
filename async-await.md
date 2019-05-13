@@ -97,7 +97,7 @@ async function getData(){
 	return data;
 }
 
-//Notice how getData is handled normally the same way we handle promise because it returns a promise 
+//Notice how getData is handled normally the same way we handle promise because once we used async the function is converted to a promise and whatever was returned from the function is the resolved value
 getData()
 .then(function(data){
 	console.log(data); //will print {name: "Amr"} after 2 seconds
