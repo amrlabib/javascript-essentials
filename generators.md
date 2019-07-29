@@ -2,7 +2,7 @@
 
 Generators are based on iterators, every generator is an iterator, basically they are just an easier and cleaner way to write iterators، as you don't need to keep state of value, or done.
 
-Generator is just a function that has slightly different behaviour, that give the function the ability to pause and then continue exection later.
+Generator is just a function that has slightly different behaviour, that give the function the ability to pause and then continue execution later.
 
 
 ### Generator functions main characteristics ? 
