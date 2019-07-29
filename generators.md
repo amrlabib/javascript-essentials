@@ -155,3 +155,27 @@ From previous example we can also track easily the behaviour of generator functi
 2. on execution of this line `myIterable.next(33)` generator function will assign `33` to `x` and will `yield 2` and pause, even the assignment of y is not done
 3. on execution of this line `myIterable.next(44)` generator function will assign `44` to `y` and will return `{ value: undefined, done : true}`
 
+---
+
+#### Example 15.5
+
+In this example we will explicitly `yield` `yield`
+
+```javascript
+function* myGeneratorFunction() {
+    yield yield yield;
+}
+
+const myIterable = myGeneratorFunction();
+
+console.log(myIterable.next(22));
+console.log(myIterable.next(33));
+console.log(myIterable.next(44));
+
+// { value: undefined, done: false}
+// { value: 33, done: false}
+// { value: 44, done: false}
+// { value: undefined, done: true}
+```
+
+Notice how `22` is just ignored and first yield is returning `undefined`
