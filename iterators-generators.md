@@ -90,7 +90,7 @@ for(let num of numbersIterable) {
 
 ## How to make an iterator(not iterable) object
 
-As we can see from example 14.1 we had to create iterator object to make `numberIterable` iterable, it is very important to differentiate between `iterable` and `iterator`, in the next example we will create iterator
+As we can see from example 14.1 we had to create iterator object to make `numberIterable` iterable, but it is very important to differentiate between `iterable` and `iterator`, in the next example we will create iterator
 
 #### Example 14.2: 
 
@@ -108,13 +108,14 @@ let numbersIterator = function(max) {
     }
 }
 const myNumbersIterator = numbersIterator(6);
-console.log(myNumbersIterator.next().value); // 1
-console.log(myNumbersIterator.next().value); // 2
-console.log(myNumbersIterator.next().value); // 3
-console.log(myNumbersIterator.next().value); // 4
-console.log(myNumbersIterator.next().value); // 5
-console.log(myNumbersIterator.next().value); // 6
-console.log(myNumbersIterator.next().value); // undefined
+while (true) {
+    const current = myNumbersIterator.next();
+    console.log(current.value);
+    if (current.done) {
+        break;
+    }
+}
+// 1 2 3 4 5 6 undefined
 ```
 ---
 
@@ -126,5 +127,49 @@ console.log(myNumbersIterator.next().value); // undefined
 
 
 ---
+
+## Generators:
+
+Generators are based on iterators, every generator is an iterator, basically they are just an easier and cleaner way to write iterators، as you don't need to keep state of value, or done.
+
+Generator is just a function that has slightly different behaviour, that give the function the ability to pause and then continue exection later.
+
+
+### Generator functions main characteristics ? 
+
+1. Generator function is created by adding `*` in function signature example: `function* myGenerator() { /* body */ }`
+2. Generator function will pause execution whenever `yield` is reached
+3. When Generator function is executed it will return iterator that we can use to iterate all values.
+4. We can use iterable based constructs on generators example [ `for-of`, `[] array destrcuturing`, `...` ]
+
+
+#### Example 14.3:
+
+We will write Example 14.2 using generators
+
+```javascript
+let numbersGenerator = function*(max) {
+    let num = 0;
+    while(num < max) {
+        yield ++num;
+    }
+}
+const numbersIterator = numbersGenerator(6);
+while (true) {
+    const current = numbersIterator.next();
+    console.log(current.value);
+    if (current.done) {
+        break;
+    }
+}
+// 1 2 3 4 5 6 undefined
+```
+
+Generator will simplify the code of iterator, and when a generator function is executed it will just return an iterator, and we can start calling `next` the same way we did it for iterator implemenation
+
+---
+
+
+
 
 
