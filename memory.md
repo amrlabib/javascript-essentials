@@ -23,7 +23,7 @@ It is very important to understand how memory allocation is done, javascript aut
 
 ---
 
-#### Example 14.0:
+#### Example 15.0:
 
 ```javascript
 var num = 10; // allocates memory for number
@@ -51,7 +51,7 @@ The main notion garbage collection algorithms rely on is the notion of reference
 
 This is the most naive garbage collection algorithm. This algorithm reduces the definition of `an object is not needed anymore` to `an object has no other objects referencing it`. An object is considered garbage collectible if there are zero references pointing at this object.
 
-#### Example 14.1:
+#### Example 15.1:
 
 
 ```javascript
@@ -90,7 +90,7 @@ innerObjNewRef = 1;
 
 There is a limitation when it comes to cycles. In the following example, two objects are created and reference one another, thus creating a cycle. They will go out of scope after the function call, so they are effectively useless and could be freed. However, the reference-counting algorithm considers that since each of the two objects is referenced at least once, neither can be garbage-collected.
 
-#### Example 14.2:
+#### Example 15.2:
 
 ```javascript
 function f() {
@@ -127,7 +127,7 @@ Common memory leak mistakes
 
 In javascript using an undeclared variable will create a new variable in global object, in browser it will be created under `window` object
 
-#### Example 14.3:
+#### Example 15.3:
 
 In this example we will see how initializing a variable without declaring it can cause an unintended leak.
 
@@ -140,7 +140,7 @@ temp(); // function execution is done but tempVar is still saved in global objec
 
 We can avoid this by adding `use strict` at the beginning of our javascript file, this will switch to strict mode in javascript execution and prevent such unintended global variables creation.
 
-#### Example: 14.3:
+#### Example 15.3:
 
 In this example we will see how incorrect usage of [`this`](context.md) can cause unintended global variables and as a result Leak.
 
