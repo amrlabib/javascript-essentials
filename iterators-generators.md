@@ -169,6 +169,30 @@ Generator will simplify the code of iterator, and when a generator function is e
 
 ---
 
+### Generator delegation:
+
+We can delegate another generator or iterable Object to do the work of current generator using `yield*` expression.
+
+#### Example 14.4: 
+
+```javascript
+function* deleteGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+function* numberGenerator() {
+    yield* deleteGenerator();
+}
+
+const myIterator = numberGenerator();
+console.log(myIterator.next().value);
+console.log(myIterator.next().value);
+console.log(myIterator.next().value);
+// 1 2 3
+```
+
 
 
 
