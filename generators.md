@@ -15,7 +15,7 @@ Generator is just a function that has slightly different behaviour, that give th
 
 #### Example 15.0:
 
-We will write Example 14.2 using generators
+We will write [Example 14.2](iterators.md#example-142) using generators
 
 ```javascript
 let numbersGenerator = function*(max) {
