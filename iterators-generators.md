@@ -176,14 +176,14 @@ We can delegate another generator or iterable Object to do the work of current g
 #### Example 14.4: 
 
 ```javascript
-function* deleteGenerator() {
+function* delegateGenerator() {
     yield 1;
     yield 2;
     yield 3;
 }
 
 function* numberGenerator() {
-    yield* deleteGenerator();
+    yield* delegateGenerator();
 }
 
 const myIterator = numberGenerator();
