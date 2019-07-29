@@ -21,8 +21,9 @@ This repository will cover the following topics:
 11. [Async/Await](async-await.md)
 12. [Classes-Objects](classes-objects.md)
 13. [ES6-classes](ES6-classes.md)
-14. [Iterators and Generators](iterators-generators.md)
-15. [Memory](memory.md)
+14. [Iterators](iterators.md)
+15. [Generators](generators.md)
+16. [Memory](memory.md)
 
 ---
 
