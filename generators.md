@@ -63,6 +63,8 @@ console.log(myIterator.next().value);
 // 1 2 3
 ```
 
+---
+
 ### Generator function argument
 
 When we declare a generator function with argument this argument will be passed only once when we execute the function and it returns iterator, and will be available during all calls of `next`
@@ -84,6 +86,7 @@ myIterable1.next(); // undefined { value: undefined, done: false }
 myIterable2.next(); // 22 { value: 22, done: false}
 ```
 
+---
 
 ### Generator `next` method argument
 
