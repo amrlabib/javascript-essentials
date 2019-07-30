@@ -24,6 +24,7 @@ This repository will cover the following topics:
 14. [Iterators](iterators.md)
 15. [Generators](generators.md)
 16. [Memory](memory.md)
+17. [Event Loop](event-loop.md)
 
 ---
 
@@ -92,3 +93,5 @@ https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-hand
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol
 
 https://medium.com/dailyjs/a-simple-guide-to-understanding-javascript-es6-generators-d1c350551950
+
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
