@@ -34,10 +34,13 @@ Whenever a javascript code is executed, all function calls are pushed into the c
 // 16
 ```
 
+Below is the state of call stack for each function call, each column will describe a new call stack state after a function call
+
 | line-14 <br /> `printSquare(4)` | line-10 <br /> `sqaure(n)` | line-6 <br /> `multiply(n,n)` | line-2 <br /> `return` | line-6 <br /> `return` | line-11 <br /> `console.log(squared)` | <br /> `console.log` is returned | line-12 <br /> `implicit return` |
 |---|---|---|---|---|---|---|---|
 | | | `multiply(n,n)` | | | | | |
 | | `square(n)` | `square(n)` | `square(n)` |  | `console.log(squared )` | | |
 |`printSquare(4)`| `printSquare(4)` | `printSquare(4)` | `printSquare(4)` |  `printSquare(4)` | `printSquare(4)` | `printSquare(4)` | |
+|`main()`| `main()` | `main()` | `main()` |  `main()` | `main()` | `main()` | `main()` |
 
 
