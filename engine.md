@@ -7,7 +7,7 @@ javascript is an interpreted programming language, which means it will run throu
 | Engine | Used in | written in | 
 |---|---|---|
 | v8 | Chrome browser, node runtime environment | C++ |
-| JavascriptCode | Safari browser, React Native |  |
+| JavascriptCore | Safari browser, React Native |  |
 | SpiderMonkey | Firefox |  |
 
 
