@@ -31,7 +31,7 @@ javascript is an interpreted programming language, which means it will run throu
 
 ## Execution Call Stack:
 
-Whenever a javascript code is executed, all function calls are pushed into the call stack, remember stack is a data structure that follows LIFO (Last in first out), and whenever a function is returned it get poped from stack.
+Whenever a javascript code is executed and encounter a function call it will push it to execution call stack, remember stack is a data structure that follows LIFO (Last In First Out), and whenever a function is returned it get poped from stack.
 
 Javascript engines contain single call stack, this is why javascript is a single threaded language that can do one thing at a time.
 
@@ -69,7 +69,7 @@ Below is the state of execution call stack for each function execution context, 
 
 ## Execution context:
 
-What happens inside each execution context from previous example ? so what happens when we enter execution context of `printSquare` function, to understand this we need to know what the engine will do while working on the top most execution context in the stack.
+What happens inside each execution context from previous example ? so what happens when we enter execution context of `printSquare` function, to understand this we need to know what the engine will do on each single execution context in the stack, mainly the engine will be working on the top most one until it is popped and then start working on next one in stack.
 
 
 ### Execution context stages:
@@ -132,7 +132,7 @@ foo(22);
 Now lets see what the execution context object will look like once `foo` is called and pushed to execution call stack
 
 
-##### During creation stage 
+#### During creation stage 
 ```
 fooExecutionContext = {
 	scopeChain: { ... },
@@ -178,7 +178,7 @@ fooExecutionContext = {
 
 1. Javascript is a synchronous single thread programming language with single execution call stack inside the engine, that means it can do only one thing at a time.
 
-[If you wonder how we can write asynchronous code in javascript, read about [Runtime Environment, Callback Queue and Event Loop](runtime-environment.md)]
+	[If you wonder why we can write asynchronous code in javascript, read about [Runtime Environment, Callback Queue and Event Loop](runtime-environment.md)]
 
 2. Execution context for each function is contructed in 2 stages, creation then execution, now [hoisting](hoisting.md) should make more sense.
 
