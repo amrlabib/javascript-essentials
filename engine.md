@@ -1,8 +1,8 @@
 # Javascript Engine:
 
-javascript is an interpreted programming language, which means it will run through a program whenever it needs to be executed, the program will interpret the javascript code, and compile it during runtime to machine code, this program is the engine, one of the most known engines is v8 engine, that is used in both chrome browser and node js runtime environments.
+javascript is an interpreted programming language, which means it will run through a program whenever it needs to be executed, the program will interpret the javascript code, and compile it during runtime to machine code, this program is the engine.
 
-## Some of the popular javascript engines:
+### Some of the popular javascript engines:
 
 | Engine | Used in | written in | 
 |---|---|---|
