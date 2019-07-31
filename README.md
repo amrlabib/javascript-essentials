@@ -1,7 +1,7 @@
 # Javascript Essentials
 
 ## Why this repository ?
-* This repository contains a concise explanation and examples to some important topics in javascript, everything is explained using examples.
+* This repository contains a concise explanation and examples to important topics in javascript, everything is explained using examples.
 
 ---
 

@@ -164,5 +164,5 @@ An important difference between function declarations and class declarations is 
 ---
 
 ### Side note:
-Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
+Hoisting is not a feature that we need to use or even looks cool to use, or thats how i think about it, it's just one of the language characteristics and how javascript [Engine](engine.md) is working, i prefer to always declare varaibles and functions before using them, it's even more readable for those who does not completely understand hoisting.
 
