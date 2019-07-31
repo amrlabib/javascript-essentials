@@ -24,7 +24,8 @@ This repository will cover the following topics:
 14. [Iterators](iterators.md)
 15. [Generators](generators.md)
 16. [Memory](memory.md)
-17. [Event Loop](event-loop.md)
+17. [Engine](engine.md)
+18. [Runtime Environment](runtime-environment.md)
 
 ---
 
@@ -95,3 +96,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_prot
 https://medium.com/dailyjs/a-simple-guide-to-understanding-javascript-es6-generators-d1c350551950
 
 https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+https://blog.bitsrc.io/javascript-internals-javascript-engine-run-time-environment-settimeout-web-api-eeed263b1617
+
+https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf
+
+http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/
