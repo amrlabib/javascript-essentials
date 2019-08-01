@@ -184,6 +184,8 @@ fooExecutionContext = {
 
 3. Primitive data type are stored directly in stack, while non primitive data types are stored in memory heap and has a variable in stack that reference the memory location in heap. [Value Or Reference](valueOrReference.md)
 
+4. Javascript Engine is also responsible for managing [memory](memory.md) it will free heap memory following some algorithms to make sure they are not needed anymore (Garbage Collector)
+
 
 
 
