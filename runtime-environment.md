@@ -83,7 +83,7 @@ Now lets see how runtime environment components will work together for the above
 ```javascript
 console.log('start');
 const startTime = new Date();
-setTimeout(function() {
+setTimeout(function myCallbackFunction() {
 	const endTime = new Date();
 	const timeDiff = endTime.getTime() - startTime.getTime();
 	console.log(`${timeDiff / 1000} seconds passed`);
@@ -103,4 +103,8 @@ console.log('end');
 // 12.058 seconds passed!
 // setTimeout callback is executed
 ```
+
+Notice how in Example 18.1 `myCallbackFunction` is delayed 12 seconds not 1 second as we passed in `setTimeout` this is because `myCallbackFunction` was in `Task Queue` but `Event Loop` was not able to push it in Execution Call stack, because it was not empty.
+
+From this we can understand that the value we pass to `setTimeout` is the minimum delay to the callback function not the exact one.
 
