@@ -61,19 +61,19 @@ Task Queue, Event Table and Event loop are the three components that give us asy
 // setTimeout callback is executed
 ```
 
-* Now lets see how runtime components will work together for the above code snippet:
-	1. Line 1: Engine will push `console.log('start')` to execution call stack and then will pop it once finished
-	2. Line 2: Engine will push `new Date()` to execution call stack and then will pop it once finished
-	3. Line 3: Engine will push `setTimeout` to execution call stack and then will realize that it is a runtime asynchronous api, so it will pop it and send it to runtime environment to insert it in `Event Table`
-	4. Line 9: Engine will push `console.log('end')` to execution call stack and then will pop it once finished
-	5. Now engin's execution call stack is empty and nothing is happening
-	6. 1 second passed after calling Line 3, so runtime environment will remove `setTimeout` from `Event Table` and queue it inside `Task Queue`
-	7. `Event Loop` will check if any task is there in `Task Queue` and will push it to execution call stack only if it is empty, so it will be pushed immediately.
-	8. now `myCallbackFunction()` is in execution call stack
-	9. Line 4: Engine will push `new Date()` to execution call stack and then will pop it once finished
-	10. Line 5: Engine will push `startTime.getTime()` and pop it then push `endTime.getTime()` and pop it
-	11. Line 6: Engine will push `console.log(`${timeDiff / 1000} seconds`);` and pop it
-	12. Line 6: Engine will push `console.log('setTimeout callback is executed');` and pop it
+Now lets see how runtime components will work together for the above code snippet:
+1. Line 1: Engine will push `console.log('start')` to execution call stack and then will pop it once finished
+2. Line 2: Engine will push `new Date()` to execution call stack and then will pop it once finished
+3. Line 3: Engine will push `setTimeout` to execution call stack and then will realize that it is a runtime asynchronous api, so it will pop it and send it to runtime environment to insert it in `Event Table`
+4. Line 9: Engine will push `console.log('end')` to execution call stack and then will pop it once finished
+5. Now engin's execution call stack is empty and nothing is happening
+6. 1 second passed after calling Line 3, so runtime environment will remove `setTimeout` from `Event Table` and queue it inside `Task Queue`
+7. `Event Loop` will check if any task is there in `Task Queue` and will push it to execution call stack only if it is empty, so it will be pushed immediately.
+8. now `myCallbackFunction()` is in execution call stack
+9. Line 4: Engine will push `new Date()` to execution call stack and then will pop it once finished
+10. Line 5: Engine will push `startTime.getTime()` and pop it then push `endTime.getTime()` and pop it
+11. Line 6: Engine will push `console.log(`${timeDiff / 1000} seconds`);` and pop it
+12. Line 6: Engine will push `console.log('setTimeout callback is executed');` and pop it
 
 
 ---
