@@ -26,6 +26,7 @@ This repository will cover the following topics:
 16. [Memory](memory.md)
 17. [Engine](engine.md)
 18. [Runtime Environment](runtime-environment.md)
+19. [Type Coercion](type-coercion.md)
 
 ---
 
@@ -102,3 +103,5 @@ https://blog.bitsrc.io/javascript-internals-javascript-engine-run-time-environme
 https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf
 
 http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/
+
+https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/#:~:text=Type%20coercion%20is%20the%20process,boolean%2C%20and%20so%20on).&text=As%20an%20example%20of%20type,different%20a%20and%20b%20types.
